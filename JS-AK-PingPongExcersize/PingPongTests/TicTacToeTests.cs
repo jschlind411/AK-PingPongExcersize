@@ -10,6 +10,15 @@ namespace PingPongTests
         public void Can_Create_TicTacToe_Object()
         {
             var TicTacToe = new TicTacToe();
+
+            Assert.NotNull(TicTacToe);
+        }
+
+        [Fact]
+        public void Has_a_play_action()
+        {
+            var TicTacToe = new TicTacToe();
+            TicTacToe.Play();
         }
     }
 }
