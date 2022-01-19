@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JS-AK-PingPongExcersize", "JS-AK-PingPongExcersize\JS-AK-PingPongExcersize.csproj", "{34FA3BA3-4AB1-4E9C-9003-358AFC76555C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JS-AK-PingPongExcersize", "JS-AK-PingPongExcersize\JS-AK-PingPongExcersize.csproj", "{34FA3BA3-4AB1-4E9C-9003-358AFC76555C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPongTests", "PingPongTests\PingPongTests.csproj", "{A7DF72B9-6C46-4BB9-BAC9-55651BA35678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPongModels", "PingPongModels\PingPongModels.csproj", "{DEA16AD8-42A0-4F6C-8435-AA4E4408A771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{34FA3BA3-4AB1-4E9C-9003-358AFC76555C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34FA3BA3-4AB1-4E9C-9003-358AFC76555C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34FA3BA3-4AB1-4E9C-9003-358AFC76555C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7DF72B9-6C46-4BB9-BAC9-55651BA35678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7DF72B9-6C46-4BB9-BAC9-55651BA35678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7DF72B9-6C46-4BB9-BAC9-55651BA35678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7DF72B9-6C46-4BB9-BAC9-55651BA35678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA16AD8-42A0-4F6C-8435-AA4E4408A771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA16AD8-42A0-4F6C-8435-AA4E4408A771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA16AD8-42A0-4F6C-8435-AA4E4408A771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA16AD8-42A0-4F6C-8435-AA4E4408A771}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
