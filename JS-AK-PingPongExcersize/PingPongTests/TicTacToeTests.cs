@@ -20,7 +20,7 @@ namespace PingPongTests
         }
 
         [Fact]
-        public void Play_GivenACharacterAndPlacement_willReturnTrueIfSuccessful()
+        public void Play_GivenACharacterAndValidPlacement_WillReturnTrueIfSuccessful()
         {
             var success = Game.Play('x', 1);
             
@@ -28,7 +28,23 @@ namespace PingPongTests
         }
 
         [Fact]
-        public void Play_GivenAPlacement_willReturnFalse_IfSpaceIsTaken()
+        public void Play_GivenACharacterAndValidPlacement_WillPlayMultipleTimes()
+        {
+            var success = Game.Play('x', 1);
+
+            Assert.True(success);
+
+            success = Game.Play('x', 6);
+
+            Assert.True(success);
+
+            success = Game.Play('x', 9);
+
+            Assert.True(success);
+        }
+
+        [Fact]
+        public void Play_GivenATakenPlacement_willReturnFalse()
         {
             Game.Play('x', 1);
             var success = Game.Play('x', 1);
@@ -40,6 +56,14 @@ namespace PingPongTests
             Assert.True(success2);
         }
 
-        
+        [Fact]
+        public void Play_GivenAnOutOfBoundPlacement_willReturnFalse()
+        {
+            var success = Game.Play('x', 10);
+
+            Assert.False(success);
+        }
+
+
     }
 }
