@@ -29,11 +29,22 @@ namespace PingPongTests
 
         [Theory]
         [InlineData('x')]
-        public void Play_GivenACharacterAndValidPlacement_WillReturnTrue_AndPutCharacterInCorrectSpace(char label)
+        [InlineData('o')]
+        public void Play_GivenACharacterAndValidPlacement_WillPutCharacterInCorrectSpace(char label)
         {
             var success = Game.Play(label, 1);
 
-            Assert.NotNull(Game.Board);
+            Assert.Equal(label, Game.Board[0]);
+        }
+
+        [Theory]
+        [InlineData('Y')]
+        [InlineData('z')]
+        public void Play_GivenAnInvalidCharacter_WillReturnFalse(char label)
+        {
+            var success = Game.Play(label, 1);
+
+            Assert.False(success);
         }
 
         [Fact]
