@@ -56,10 +56,12 @@ namespace PingPongTests
             Assert.True(success2);
         }
 
-        [Fact]
-        public void Play_GivenAnOutOfBoundPlacement_willReturnFalse()
+        [Theory]
+        [InlineData(0)]
+        [InlineData(10)]
+        public void Play_GivenAnOutOfBoundPlacement_willReturnFalse(int outOfBoundsLocation)
         {
-            var success = Game.Play('x', 10);
+            var success = Game.Play('x', outOfBoundsLocation);
 
             Assert.False(success);
         }
