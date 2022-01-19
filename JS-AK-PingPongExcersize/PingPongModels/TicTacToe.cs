@@ -1,21 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PingPongModels
 {
     public class TicTacToe
     {
-        private bool hasMoved = false;
+        private char[] Board;
+
+        public TicTacToe()
+        {
+            Board = new char[9] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+        }
+
         public bool Play(char character, int gridLocation)
         {
-            if(hasMoved == false)
+            if(IsValidMove(gridLocation))
             {
-                hasMoved = true;
-                return hasMoved;
+                Board[gridLocation - 1] = character;
+                return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        private bool IsValidMove(int gridLocation)
+        {
+            if (Board[gridLocation-1] == ' ')
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
