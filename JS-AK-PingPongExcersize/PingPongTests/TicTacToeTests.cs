@@ -59,6 +59,8 @@ namespace PingPongTests
         [Theory]
         [InlineData(0)]
         [InlineData(10)]
+        [InlineData(-50)]
+        [InlineData(50)]
         public void Play_GivenAnOutOfBoundPlacement_willReturnFalse(int outOfBoundsLocation)
         {
             var success = Game.Play('x', outOfBoundsLocation);
