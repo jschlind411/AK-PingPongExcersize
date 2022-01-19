@@ -30,10 +30,16 @@ namespace PingPongTests
         [Fact]
         public void Play_GivenAPlacement_willReturnFalse_IfSpaceIsTaken()
         {
+            Game.Play('x', 1);
             var success = Game.Play('x', 1);
-            var success2 = Game.Play('x', 1);
 
-            Assert.False(success2);
+            Assert.False(success);
+
+            var success2 = Game.Play('x', 2);
+
+            Assert.True(success2);
         }
+
+        
     }
 }
