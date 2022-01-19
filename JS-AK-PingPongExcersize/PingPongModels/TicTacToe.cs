@@ -27,7 +27,7 @@ namespace PingPongModels
 
         private bool IsValidMove(int gridLocation)
         {
-            if(gridLocation > 9 || gridLocation < 1)
+            if(gridLocation == 0 || gridLocation == 10)
             {
                 return false;
             }
