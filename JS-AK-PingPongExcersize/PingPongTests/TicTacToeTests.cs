@@ -18,7 +18,9 @@ namespace PingPongTests
         public void Play_GivenACharacterAndPlacement_willPlaceMove()
         {
             var TicTacToe = new TicTacToe();
-            TicTacToe.Play('x', 1);
+            var success = TicTacToe.Play('x', 1);
+
+            
         }
     }
 }
