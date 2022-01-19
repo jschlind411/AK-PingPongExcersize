@@ -5,7 +5,7 @@ namespace PingPongModels
 {
     public class TicTacToe
     {
-        private char[] Board;
+        public char[] Board { get; private set; }
 
         public TicTacToe()
         {
