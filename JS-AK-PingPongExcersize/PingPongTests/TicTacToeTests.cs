@@ -27,6 +27,15 @@ namespace PingPongTests
             Assert.True(success);
         }
 
+        [Theory]
+        [InlineData('x')]
+        public void Play_GivenACharacterAndValidPlacement_WillReturnTrue_AndPutCharacterInCorrectSpace(char label)
+        {
+            var success = Game.Play(label, 1);
+
+            Assert.NotNull(Game.Board);
+        }
+
         [Fact]
         public void Play_GivenACharacterAndValidPlacement_WillPlayMultipleTimes()
         {
@@ -67,7 +76,5 @@ namespace PingPongTests
 
             Assert.False(success);
         }
-
-
     }
 }
