@@ -4,7 +4,7 @@ namespace PingPongModels
 {
     public class TicTacToe
     {
-        public void Play()
+        public void Play(char character, int gridLocation)
         {
             
         }
