@@ -6,21 +6,23 @@ namespace PingPongTests
 {
     public class TicTacToeTests
     {
+        private TicTacToe Game;
+
+        public TicTacToeTests()
+        {
+            Game = new TicTacToe();
+        }
+
         [Fact]
         public void Can_Create_TicTacToe_Object()
         {
-            var TicTacToe = new TicTacToe();
-
-            Assert.NotNull(TicTacToe);
+            Assert.NotNull(Game);
         }
 
         [Fact]
         public void Play_GivenACharacterAndPlacement_willPlaceMove()
         {
-            var TicTacToe = new TicTacToe();
-            var success = TicTacToe.Play('x', 1);
-
-            
+            var success = Game.Play('x', 1);          
         }
     }
 }
