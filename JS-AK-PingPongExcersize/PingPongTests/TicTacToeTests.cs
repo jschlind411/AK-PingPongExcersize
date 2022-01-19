@@ -20,9 +20,20 @@ namespace PingPongTests
         }
 
         [Fact]
-        public void Play_GivenACharacterAndPlacement_willPlaceMove()
+        public void Play_GivenACharacterAndPlacement_willReturnTrueIfSuccessful()
         {
-            var success = Game.Play('x', 1);          
+            var success = Game.Play('x', 1);
+            
+            Assert.True(success);
+        }
+
+        [Fact]
+        public void Play_GivenAPlacement_willReturnFalse_IfSpaceIsTaken()
+        {
+            var success = Game.Play('x', 1);
+            var success2 = Game.Play('x', 1);
+
+            Assert.False(success2);
         }
     }
 }
