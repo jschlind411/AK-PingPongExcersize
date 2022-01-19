@@ -15,10 +15,10 @@ namespace PingPongTests
         }
 
         [Fact]
-        public void Has_a_play_action()
+        public void Play_GivenACharacterAndPlacement_willPlaceMove()
         {
             var TicTacToe = new TicTacToe();
-            TicTacToe.Play();
+            TicTacToe.Play('x', 1);
         }
     }
 }
