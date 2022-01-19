@@ -14,7 +14,7 @@ namespace PingPongModels
 
         public bool Play(char character, int gridLocation)
         {
-            if(IsValidMove(gridLocation))
+            if(IsValidMove(gridLocation) && IsValidCharacter(character))
             {
                 Board[gridLocation - 1] = character;
                 return true;
@@ -23,6 +23,16 @@ namespace PingPongModels
             {
                 return false;
             }
+        }
+
+        private bool IsValidCharacter(char character)
+        {
+            if(character == 'x' || character == 'o')
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private bool IsValidMove(int gridLocation)
