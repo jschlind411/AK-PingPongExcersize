@@ -1,4 +1,5 @@
 using System;
+using PingPongModels;
 using Xunit;
 
 namespace PingPongTests
