@@ -10,7 +10,7 @@ namespace PingPong_Models
             {
                 return "fizz";
             }
-            else if(i == 5)
+            else if(i % 5 == 0 && i != 15)
             {
                 return "buzz";
             }
