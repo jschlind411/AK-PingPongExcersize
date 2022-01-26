@@ -6,19 +6,41 @@ namespace PingPongTests_FizzBuzz
 {
     public class FizzBuzz_Tests
     {
+        private FizzBuzzer fizzBuzzer;
+
+        public FizzBuzz_Tests()
+        {
+            fizzBuzzer = new FizzBuzzer();
+        }
+
         [Fact]
         public void ClassFizzBuzzer_exists()
         {
-            var result = new FizzBuzzer();
+            Assert.NotNull(fizzBuzzer);
+        }
+
+        [Fact]
+        public void CalculateResult_GivenANumber_WillNotReturnNull()
+        {
+            string result = fizzBuzzer.CalculateResult(2);
 
             Assert.NotNull(result);
         }
 
         [Fact]
-        public void Test1()
+        public void CalculateResult_GivenANumber_OutputsEmptyString_IfNoCriteriaMet()
         {
-            var fizzBuzzer = new FizzBuzzer();
             string result = fizzBuzzer.CalculateResult(2);
+
+            Assert.Equal("", result);
+        }
+
+        [Fact]
+        public void CalculateResult_GivenANumberDivisibleBy3_OutputsFizz()
+        {
+            string result = fizzBuzzer.CalculateResult(3);
+
+            Assert.Equal("fizz", result);
         }
     }
 }
