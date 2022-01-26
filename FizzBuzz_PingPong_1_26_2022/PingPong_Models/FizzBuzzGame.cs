@@ -8,5 +8,9 @@ namespace FizzBuzz_Models
 {
     public class FizzBuzzGame
     {
+        public bool Verify(string v1, int v2)
+        {
+            return true;
+        }
     }
 }
