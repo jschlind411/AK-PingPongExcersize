@@ -4,9 +4,9 @@ namespace PingPong_Models
 {
     public class FizzBuzzer
     {
-        public void CalculateResult(int v)
+        public string CalculateResult(int i)
         {
-            
+            return string.Empty;
         }
     }
 }
