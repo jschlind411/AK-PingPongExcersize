@@ -9,6 +9,15 @@ namespace FizzBuzz_Tests
         public void FizzBuzz_Game_NotNull()
         {
             var result = new FizzBuzzGame();
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void FizzBuzz_Game_VerifyUserGuess()
+        {
+            var fizzBuzz = new FizzBuzzGame();
+            bool result = fizzBuzz.Verify("fizz", 5);
         }
     }
 }
