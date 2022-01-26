@@ -14,6 +14,10 @@ namespace PingPong_Models
             {
                 return "buzz";
             }
+            else if(i == 15)
+            {
+                return "fizzbuzz";
+            }
 
             return string.Empty;
         }
