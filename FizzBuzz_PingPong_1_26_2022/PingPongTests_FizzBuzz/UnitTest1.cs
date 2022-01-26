@@ -57,10 +57,13 @@ namespace PingPongTests_FizzBuzz
             Assert.Equal("buzz", result);
         }
 
-        [Fact]
-        public void CalculateResult_GivenANumberDivisibleBy15_OutputsFizzBuzz()
+        [Theory]
+        [InlineData(15)]
+        [InlineData(30)]
+        [InlineData(45)]
+        public void CalculateResult_GivenANumberDivisibleBy15_OutputsFizzBuzz(int value)
         {
-            string result = fizzBuzzer.CalculateResult(15);
+            string result = fizzBuzzer.CalculateResult(value);
 
             Assert.Equal("fizzbuzz", result);
         }
