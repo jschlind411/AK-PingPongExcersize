@@ -6,7 +6,7 @@ namespace PingPong_Models
     {
         public string CalculateResult(int i)
         {
-            if(i == 3)
+            if(i % 3 == 0 && i!=15)
             {
                 return "fizz";
             }
