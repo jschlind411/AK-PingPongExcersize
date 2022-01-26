@@ -6,17 +6,17 @@ namespace PingPong_Models
     {
         public string CalculateResult(int i)
         {
-            if(i % 3 == 0 && i!=15)
+            if (i % 15 == 0)
+            {
+                return "fizzbuzz";
+            }
+            else if (i % 3 == 0)
             {
                 return "fizz";
             }
-            else if(i % 5 == 0 && i != 15)
+            else if(i % 5 == 0)
             {
                 return "buzz";
-            }
-            else if(i == 15)
-            {
-                return "fizzbuzz";
             }
 
             return string.Empty;
