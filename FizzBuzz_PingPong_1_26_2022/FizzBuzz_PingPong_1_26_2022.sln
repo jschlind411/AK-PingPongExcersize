@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz_PingPong_1_26_2022", "FizzBuzz_PingPong_1_26_2022\FizzBuzz_PingPong_1_26_2022.csproj", "{1F82F351-8618-458F-9C7A-19CC82CE9DDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzz_PingPong_1_26_2022", "FizzBuzz_PingPong_1_26_2022\FizzBuzz_PingPong_1_26_2022.csproj", "{1F82F351-8618-458F-9C7A-19CC82CE9DDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz_Models", "PingPong_Models\FizzBuzz_Models.csproj", "{76631F3F-9438-4BE3-9137-EA6C698A1779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz_Tests", "PingPongTests_FizzBuzz\FizzBuzz_Tests.csproj", "{58363817-13AC-4D17-82AF-6304E2B91A07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{1F82F351-8618-458F-9C7A-19CC82CE9DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F82F351-8618-458F-9C7A-19CC82CE9DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F82F351-8618-458F-9C7A-19CC82CE9DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76631F3F-9438-4BE3-9137-EA6C698A1779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76631F3F-9438-4BE3-9137-EA6C698A1779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76631F3F-9438-4BE3-9137-EA6C698A1779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76631F3F-9438-4BE3-9137-EA6C698A1779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58363817-13AC-4D17-82AF-6304E2B91A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58363817-13AC-4D17-82AF-6304E2B91A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58363817-13AC-4D17-82AF-6304E2B91A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58363817-13AC-4D17-82AF-6304E2B91A07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
