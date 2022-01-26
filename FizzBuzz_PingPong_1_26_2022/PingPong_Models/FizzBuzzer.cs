@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PingPong_Models
+namespace FizzBuzz_Models
 {
     public class FizzBuzzer
     {

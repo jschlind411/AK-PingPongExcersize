@@ -1,5 +1,4 @@
-﻿using PingPong_Models;
-using System;
+﻿using FizzBuzz_Models;
 using Xunit;
 
 namespace FizzBuzz_Tests
