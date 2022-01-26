@@ -18,7 +18,7 @@ namespace PingPongTests_FizzBuzz
         public void Test1()
         {
             var fizzBuzzer = new FizzBuzzer();
-            fizzBuzzer.CalculateResult(2);
+            string result = fizzBuzzer.CalculateResult(2);
         }
     }
 }
