@@ -3,12 +3,12 @@ using Xunit;
 
 namespace PingPongTests_FizzBuzz
 {
-    public class UnitTest1
+    public class FizzBuzz_Tests
     {
         [Fact]
         public void Test1()
         {
-
+            var result = new FizzBuzzer();
         }
     }
 }
