@@ -8,7 +8,7 @@ namespace FizzBuzz_Models
 {
     public class FizzBuzzGame
     {
-        public FizzBuzzer fizzBuzzer;
+        protected FizzBuzzer fizzBuzzer;
 
         public FizzBuzzGame()
         {

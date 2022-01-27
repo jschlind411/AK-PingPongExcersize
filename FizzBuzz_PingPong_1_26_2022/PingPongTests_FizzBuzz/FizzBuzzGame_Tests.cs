@@ -1,4 +1,5 @@
 ﻿using FizzBuzz_Models;
+using Moq;
 using Xunit;
 
 namespace FizzBuzz_Tests
@@ -6,25 +7,20 @@ namespace FizzBuzz_Tests
     public class FizzBuzzGame_Tests
     {
         private FizzBuzzGame fizzBuzz;
+        private Mock<FizzBuzzer> _mockFizzBuzzer;
 
         public FizzBuzzGame_Tests()
         {
-            fizzBuzz = new FizzBuzzGame();
+            _mockFizzBuzzer = new Mock<FizzBuzzer>();
+            fizzBuzz = new FizzBuzzGame(_mockFizzBuzzer);
         }
 
-        public class FizzBuzzerTests
+        public class FizzBuzzerPropertiesTests: FizzBuzzGame
         {
-            private FizzBuzzGame fizzBuzz;
-
-            public FizzBuzzerTests()
-            {
-                fizzBuzz = new FizzBuzzGame();
-            }
-
             [Fact]
             public void FizzBuzzer_IsCreated_WithinFizzBuzzGame()
             {
-                Assert.NotNull(fizzBuzz.fizzBuzzer);
+                Assert.NotNull(fizzBuzzer);
             }
         }
 
@@ -46,6 +42,7 @@ namespace FizzBuzz_Tests
         [Fact]
         public void Verify_GivenAValidGuess_ReturnsTrue()
         {
+
             var result = fizzBuzz.Verify("", 0);
 
             Assert.True(result);
