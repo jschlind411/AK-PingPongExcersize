@@ -42,7 +42,7 @@ namespace FizzBuzz_Tests
         [Fact]
         public void Verify_GivenAValidGuess_ReturnsTrue()
         {
-
+            _mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
             var result = fizzBuzz.Verify("", 0);
 
             Assert.True(result);
