@@ -2,7 +2,7 @@
 
 namespace FizzBuzz_Models
 {
-    public class FizzBuzzer
+    public class FizzBuzzer: IFizzBuzzer
     {
         public string CalculateResult(int i)
         {
