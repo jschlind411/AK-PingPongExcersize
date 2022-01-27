@@ -13,7 +13,7 @@ namespace PingPongTests_FizzBuzz
         }
 
         [Fact]
-        public void ClassFizzBuzzer_exists()
+        public void FizzBuzzer_CanBeCreated()
         {
             Assert.NotNull(fizzBuzzer);
         }
