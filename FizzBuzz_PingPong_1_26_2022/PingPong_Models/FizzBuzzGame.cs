@@ -10,9 +10,11 @@ namespace FizzBuzz_Models
     {
         protected FizzBuzzer fizzBuzzer;
 
-        public FizzBuzzGame()
+        public FizzBuzzGame() : this(new FizzBuzzer()) { }
+
+        public FizzBuzzGame(FizzBuzzer fizzbuzzer)
         {
-            fizzBuzzer = new FizzBuzzer();
+            fizzBuzzer = fizzbuzzer;
         }
 
         public bool Verify(string v1, int v2)

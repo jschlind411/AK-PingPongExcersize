@@ -12,7 +12,7 @@ namespace FizzBuzz_Tests
         public FizzBuzzGame_Tests()
         {
             _mockFizzBuzzer = new Mock<FizzBuzzer>();
-            fizzBuzz = new FizzBuzzGame(_mockFizzBuzzer);
+            fizzBuzz = new FizzBuzzGame(_mockFizzBuzzer.Object);
         }
 
         public class FizzBuzzerPropertiesTests: FizzBuzzGame
