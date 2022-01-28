@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FizzBuzz_Models
 {
@@ -10,19 +6,29 @@ namespace FizzBuzz_Models
     {
         public bool DetermineIfGuessWasCorrect(string guess, string result)
         {
-            if(guess == "guess")
+            if(!ValidateGuess(guess))
             {
                 throw new Exception();
             }
 
             var wasSuccessful = false;
 
-            if (result == guess)
+            if (guess.ToLower() == result)
             {
                 wasSuccessful = true;
             }
 
             return wasSuccessful;
+        }
+
+        private bool ValidateGuess(string guess)
+        {
+            if(guess.ToLower() != "fizz" && guess.ToLower() != "buzz" && guess.ToLower() != "fizzbuzz")
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
