@@ -14,10 +14,11 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void Player_hasScoreProperty()
+        public void Player_hasIntScoreProperty()
         {
             var player = new Player();
-            player.Score;
+
+            Assert.IsType<int>(player.Score);
         }
 
         //[Fact]
