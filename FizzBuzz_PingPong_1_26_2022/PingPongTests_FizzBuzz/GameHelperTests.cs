@@ -18,7 +18,7 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void OnCreate_GameHelperExists()
+        public void GameHelper_CanBeCreated()
         {
             Assert.NotNull(_gameHelper);
         }

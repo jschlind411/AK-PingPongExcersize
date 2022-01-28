@@ -65,23 +65,5 @@ namespace FizzBuzz_Tests
 
             Assert.False(result);
         }
-
-        [Fact]
-        public void AddScore_ScoreAddsOne()
-        {
-            fizzBuzz.AddScore();
-
-            Assert.Equal(1, fizzBuzz.Score);
-
-            fizzBuzz.AddScore();
-
-            Assert.Equal(2, fizzBuzz.Score);
-        }
-
-        [Fact]
-        public void GetWinner()
-        {
-            fizzBuzz.GetWinner();
-        }
     }
 }
