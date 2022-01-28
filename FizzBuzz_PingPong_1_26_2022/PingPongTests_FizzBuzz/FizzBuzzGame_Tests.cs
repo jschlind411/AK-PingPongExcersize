@@ -72,6 +72,10 @@ namespace FizzBuzz_Tests
             fizzBuzz.AddScore();
 
             Assert.Equal(1, fizzBuzz.Score);
+
+            fizzBuzz.AddScore();
+
+            Assert.Equal(2, fizzBuzz.Score);
         }
     }
 }
