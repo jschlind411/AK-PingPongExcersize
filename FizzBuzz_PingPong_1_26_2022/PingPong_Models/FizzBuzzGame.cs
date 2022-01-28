@@ -32,5 +32,10 @@ namespace FizzBuzz_Models
         {
             Score += 1;
         }
+
+        public void GetWinner()
+        {
+
+        }
     }
 }
