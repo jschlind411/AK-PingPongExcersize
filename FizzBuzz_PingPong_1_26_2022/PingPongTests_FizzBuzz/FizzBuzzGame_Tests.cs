@@ -1,5 +1,6 @@
 ﻿using FizzBuzz_Models;
 using Moq;
+using System;
 using Xunit;
 
 namespace FizzBuzz_Tests
@@ -24,6 +25,12 @@ namespace FizzBuzz_Tests
             {
                 Assert.NotNull(fizzBuzzer);
             }
+
+            [Fact]
+            public void GameHelper_IsCreated_WithinFizzBuzzGame()
+            {
+                Assert.NotNull(_gameHelper);
+            }
         }
 
 
@@ -44,7 +51,6 @@ namespace FizzBuzz_Tests
         [Fact]
         public void Verify_GivenAValidGuess_ReturnsTrue()
         {
-            //_mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
             _gameHelper.Setup(x => x.DetermineIfGuessWasCorrect(It.IsAny<string>(), It.IsAny<string>())).Returns(true);
             var result = fizzBuzz.Verify("", 0);
 
@@ -54,7 +60,6 @@ namespace FizzBuzz_Tests
         [Fact]
         public void Verify_GivenAnInvalidGuess_ReturnsFalse()
         {
-            //_mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
             _gameHelper.Setup(x => x.DetermineIfGuessWasCorrect(It.IsAny<string>(), It.IsAny<string>())).Returns(false);
             var result = fizzBuzz.Verify("", 0);
 
