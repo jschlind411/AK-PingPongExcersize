@@ -23,7 +23,7 @@ namespace FizzBuzz_Models
 
         private bool ValidateGuess(string guess)
         {
-            if(guess.ToLower() != "fizz" && guess.ToLower() != "buzz" && guess.ToLower() != "fizzbuzz")
+            if(guess != "" && guess.ToLower() != "fizz" && guess.ToLower() != "buzz" && guess.ToLower() != "fizzbuzz")
             {
                 return false;
             }
