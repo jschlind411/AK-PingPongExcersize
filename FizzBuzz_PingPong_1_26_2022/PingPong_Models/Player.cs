@@ -8,5 +8,6 @@ namespace FizzBuzz_Models
 {
     public class Player
     {
+        public object Score { get; set; }
     }
 }
