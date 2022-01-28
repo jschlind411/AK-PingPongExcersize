@@ -8,11 +8,13 @@ namespace FizzBuzz_Tests
     {
         private FizzBuzzGame fizzBuzz;
         private Mock<IFizzBuzzer> _mockFizzBuzzer;
+        private Mock<IGameHelper> _gameHelper;
 
         public FizzBuzzGame_Tests()
         {
             _mockFizzBuzzer = new Mock<IFizzBuzzer>();
-            fizzBuzz = new FizzBuzzGame(_mockFizzBuzzer.Object);
+            _gameHelper = new Mock<IGameHelper>();
+            fizzBuzz = new FizzBuzzGame(_mockFizzBuzzer.Object, _gameHelper.Object);
         }
 
         public class FizzBuzzerPropertiesTests: FizzBuzzGame
@@ -42,7 +44,8 @@ namespace FizzBuzz_Tests
         [Fact]
         public void Verify_GivenAValidGuess_ReturnsTrue()
         {
-            _mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
+            //_mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
+            _gameHelper.Setup(x => x.DetermineIfGuessWasCorrect(It.IsAny<string>(), It.IsAny<string>())).Returns(true);
             var result = fizzBuzz.Verify("", 0);
 
             Assert.True(result);
@@ -51,7 +54,8 @@ namespace FizzBuzz_Tests
         [Fact]
         public void Verify_GivenAnInvalidGuess_ReturnsFalse()
         {
-            _mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
+            //_mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
+            _gameHelper.Setup(x => x.DetermineIfGuessWasCorrect(It.IsAny<string>(), It.IsAny<string>())).Returns(false);
             var result = fizzBuzz.Verify("", 0);
 
             Assert.False(result);
