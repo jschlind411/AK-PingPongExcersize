@@ -77,5 +77,11 @@ namespace FizzBuzz_Tests
 
             Assert.Equal(2, fizzBuzz.Score);
         }
+
+        [Fact]
+        public void GetWinner()
+        {
+            fizzBuzz.GetWinner();
+        }
     }
 }
