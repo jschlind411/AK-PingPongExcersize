@@ -1,4 +1,4 @@
-﻿using System;
+﻿using FizzBuzz_Models.Interfaces;
 
 namespace FizzBuzz_Models
 {

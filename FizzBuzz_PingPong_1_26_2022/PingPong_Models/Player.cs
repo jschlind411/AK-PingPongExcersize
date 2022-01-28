@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz_Models
 {
-    public interface IGameHelper
+    public class Player
     {
-        bool DetermineIfGuessWasCorrect(string guess, string result);
     }
 }
