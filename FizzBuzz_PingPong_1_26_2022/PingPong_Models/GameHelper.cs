@@ -10,6 +10,11 @@ namespace FizzBuzz_Models
     {
         public bool DetermineIfGuessWasCorrect(string guess, string result)
         {
+            if(guess == "guess")
+            {
+                throw new Exception();
+            }
+
             var wasSuccessful = false;
 
             if (result == guess)
