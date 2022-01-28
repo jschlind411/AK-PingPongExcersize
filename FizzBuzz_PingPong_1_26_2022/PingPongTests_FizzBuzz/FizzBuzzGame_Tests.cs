@@ -70,6 +70,8 @@ namespace FizzBuzz_Tests
         public void AddScore_ScoreAddsOne()
         {
             fizzBuzz.AddScore();
+
+            Assert.Equal(1, fizzBuzz.Score);
         }
     }
 }
