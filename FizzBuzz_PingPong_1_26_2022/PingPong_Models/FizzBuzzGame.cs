@@ -25,5 +25,10 @@ namespace FizzBuzz_Models
 
             return _gameHelper.DetermineIfGuessWasCorrect(guess, result);
         }
+
+        public void AddScore()
+        {
+            
+        }
     }
 }
