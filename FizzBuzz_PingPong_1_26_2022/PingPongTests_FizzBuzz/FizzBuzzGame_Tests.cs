@@ -7,11 +7,11 @@ namespace FizzBuzz_Tests
     public class FizzBuzzGame_Tests
     {
         private FizzBuzzGame fizzBuzz;
-        private Mock<FizzBuzzer> _mockFizzBuzzer;
+        private Mock<IFizzBuzzer> _mockFizzBuzzer;
 
         public FizzBuzzGame_Tests()
         {
-            _mockFizzBuzzer = new Mock<FizzBuzzer>();
+            _mockFizzBuzzer = new Mock<IFizzBuzzer>();
             fizzBuzz = new FizzBuzzGame(_mockFizzBuzzer.Object);
         }
 
@@ -46,6 +46,15 @@ namespace FizzBuzz_Tests
             var result = fizzBuzz.Verify("", 0);
 
             Assert.True(result);
+        }
+
+        [Fact]
+        public void Verify_GivenAnInvalidGuess_ReturnsFalse()
+        {
+            _mockFizzBuzzer.Setup(x => x.CalculateResult(It.IsAny<int>() )).Returns("");
+            var result = fizzBuzz.Verify("", 0);
+
+            Assert.False(result);
         }
     }
 }

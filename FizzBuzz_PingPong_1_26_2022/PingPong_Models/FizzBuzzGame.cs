@@ -8,11 +8,11 @@ namespace FizzBuzz_Models
 {
     public class FizzBuzzGame
     {
-        protected FizzBuzzer fizzBuzzer;
+        protected IFizzBuzzer fizzBuzzer;
 
         public FizzBuzzGame() : this(new FizzBuzzer()) { }
 
-        public FizzBuzzGame(FizzBuzzer fizzbuzzer)
+        public FizzBuzzGame(IFizzBuzzer fizzbuzzer)
         {
             fizzBuzzer = fizzbuzzer;
         }
