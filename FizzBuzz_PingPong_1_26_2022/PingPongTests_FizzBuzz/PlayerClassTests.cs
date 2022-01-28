@@ -9,6 +9,15 @@ namespace FizzBuzz_Tests
         public void Player_CanBeCreated()
         {
             var result = new Player();
+
+            Assert.NotNull(result); 
+        }
+
+        [Fact]
+        public void Player_hasScoreProperty()
+        {
+            var player = new Player();
+            player.Score;
         }
 
         //[Fact]
