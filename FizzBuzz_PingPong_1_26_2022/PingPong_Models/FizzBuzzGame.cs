@@ -30,7 +30,7 @@ namespace FizzBuzz_Models
 
         public void AddScore()
         {
-            Score = 1;
+            Score += 1;
         }
     }
 }
