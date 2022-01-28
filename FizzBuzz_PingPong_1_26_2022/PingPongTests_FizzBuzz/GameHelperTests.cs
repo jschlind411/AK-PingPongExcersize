@@ -25,10 +25,22 @@ namespace FizzBuzz_Tests
 
         [Theory]
         [InlineData("guess")]
+        [InlineData("fezz")]
+        [InlineData("1")]
         public void DetermineIfGuessWasCorrect_GivenAGuessThatIsNotPossible_ThrowsException(string badGuess)
         {
-
             Assert.Throws<Exception>(() => _gameHelper.DetermineIfGuessWasCorrect(badGuess,"") );
+        }
+
+        [Theory]
+        [InlineData("FIZZ","fizz")]
+        [InlineData("Buzz", "buzz")]
+        [InlineData("fiZZBuZz", "fizzbuzz")]
+        public void DetermineIfGuessWasCorrect_CorrectGuessWithMismatchStringCase_OutputsTrue(string guess, string actual)
+        {
+            var result = _gameHelper.DetermineIfGuessWasCorrect(guess, actual);
+
+            Assert.True(result);
         }
     }
 }
