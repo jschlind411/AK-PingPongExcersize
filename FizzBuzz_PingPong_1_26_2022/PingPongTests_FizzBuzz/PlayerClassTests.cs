@@ -21,22 +21,18 @@ namespace FizzBuzz_Tests
             Assert.IsType<int>(player.Score);
         }
 
-        //[Fact]
-        //public void FizzBuzzGame_CanHoldMultipleScores()
-        //{
-        //    var result = fizzBuzz.Score[0];
-        //}
-        //
-        //[Fact]
-        //public void AddScore_ScoreAddsOne()
-        //{
-        //    fizzBuzz.AddScore();
-        //
-        //    Assert.Equal(1, fizzBuzz.Score);
-        //
-        //    fizzBuzz.AddScore();
-        //
-        //    Assert.Equal(2, fizzBuzz.Score);
-        //}
+        [Fact]
+        public void AddScore_ScoreAddsOne()
+        {
+            var player = new Player();
+
+            player.AddScore();
+        
+            Assert.Equal(1, player.Score);
+        
+            player.AddScore();
+        
+            Assert.Equal(2, player.Score);
+        }
     }
 }
