@@ -65,5 +65,11 @@ namespace FizzBuzz_Tests
 
             Assert.False(result);
         }
+
+        [Fact]
+        public void AddScore_ScoreAddsOne()
+        {
+            fizzBuzz.AddScore();
+        }
     }
 }

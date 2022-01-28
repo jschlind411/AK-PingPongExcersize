@@ -23,10 +23,25 @@ namespace FizzBuzz_Tests
             Assert.NotNull(_gameHelper);
         }
 
-        [Fact]
-        public void DetermineIfGuessWasCorrect_GivenAnIncorrectGuess_ReturnsFalse()
+        [Theory]
+        [InlineData("","")]
+        [InlineData("fizz","fizz")]
+        [InlineData("buzz","buzz")]
+        [InlineData("fizzbuzz","fizzbuzz")]
+        public void DetermineIfGuessWasCorrect_GivenACorrectGuess_ReturnTrue(string guess, string actual)
         {
-            var result = _gameHelper.DetermineIfGuessWasCorrect("","fizz");
+            bool result = _gameHelper.DetermineIfGuessWasCorrect(guess, actual);
+
+            Assert.True(result);
+        }
+
+        [Theory]
+        [InlineData("","fizz")]
+        [InlineData("fizz","buzz")]
+        [InlineData("buzz", "fizzbuzz")]
+        public void DetermineIfGuessWasCorrect_GivenAnIncorrectGuess_ReturnsFalse(string guess, string actual)
+        {
+            var result = _gameHelper.DetermineIfGuessWasCorrect(guess, actual);
 
             Assert.False(result);
         }
