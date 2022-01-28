@@ -9,5 +9,10 @@ namespace FizzBuzz_Models
     public class Player
     {
         public int Score { get; set; }
+
+        public void AddScore()
+        {
+            Score += 1;
+        }
     }
 }
