@@ -11,6 +11,8 @@ namespace FizzBuzz_Models
         protected IFizzBuzzer fizzBuzzer;
         protected IGameHelper _gameHelper;
 
+        public int Score { get; private set; } = 0;
+
         public FizzBuzzGame() : this(new FizzBuzzer(), new GameHelper()) { }
 
         public FizzBuzzGame(IFizzBuzzer fizzbuzzer, IGameHelper gameHelper)
@@ -28,7 +30,7 @@ namespace FizzBuzz_Models
 
         public void AddScore()
         {
-            
+            Score = 1;
         }
     }
 }
