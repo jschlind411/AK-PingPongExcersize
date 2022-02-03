@@ -74,9 +74,9 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void CreatePlayer_CreatesPlayerObject()
+        public void CreatePlayer_CreatesPlayerObject_WithAGivenName_AndZeroScore()
         {
-            fizzBuzz.CreatePlayer();
+            fizzBuzz.CreatePlayer("Name");
             //Player result = fizzBuzz.Players;
         }
 
