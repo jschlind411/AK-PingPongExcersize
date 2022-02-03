@@ -34,7 +34,7 @@ namespace FizzBuzz_Models
 
         public void CreatePlayer(string name)
         {
-            
+            Players.Add(new Player());
         }
     }
 }
