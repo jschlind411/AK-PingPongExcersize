@@ -81,6 +81,7 @@ namespace FizzBuzz_Tests
                 CreatePlayer("Name");
 
                 Assert.NotNull(Players[0]);
+                Assert.Equal("Name", Players[0].Name);
             }
         }
 
