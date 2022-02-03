@@ -26,7 +26,12 @@ namespace FizzBuzz_Models
 
         public Player GetWinner()
         {
-            return null;
+            return new Player();
+        }
+
+        public void CreatePlayer()
+        {
+            
         }
     }
 }
