@@ -1,6 +1,7 @@
 ﻿using FizzBuzz_Models;
 using FizzBuzz_Models.Interfaces;
 using Moq;
+using System.Collections.Generic;
 using Xunit;
 
 namespace FizzBuzz_Tests
@@ -30,6 +31,12 @@ namespace FizzBuzz_Tests
             public void GameHelper_IsCreated_WithinFizzBuzzGame()
             {
                 Assert.NotNull(_gameHelper);
+            }
+
+            [Fact]
+            public void PlayersList_IsCreated_WithInFizzBuzzGame()
+            {
+                Assert.IsType<List<Player>>(Players);
             }
         }
 
@@ -70,6 +77,7 @@ namespace FizzBuzz_Tests
         public void CreatePlayer_CreatesPlayerObject()
         {
             fizzBuzz.CreatePlayer();
+            //Player result = fizzBuzz.Players;
         }
 
         [Fact]
