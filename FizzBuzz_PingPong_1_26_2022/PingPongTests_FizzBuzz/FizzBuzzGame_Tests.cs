@@ -65,5 +65,11 @@ namespace FizzBuzz_Tests
 
             Assert.False(result);
         }
+
+        [Fact]
+        public void GetWinner_ReturnsPlayerNameAndScore()
+        {
+            Player result = fizzBuzz.GetWinner();
+        }
     }
 }

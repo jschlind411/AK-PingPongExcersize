@@ -19,7 +19,7 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void Player_hasIntScoreProperty()
+        public void Player_HasIntScoreProperty()
         {
             Assert.IsType<int>(player.Score);
         }
@@ -37,7 +37,7 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void Player_hasAName()
+        public void Player_HasStringNameProperty()
         {
             Assert.IsType<string>(player.Name);
         }
