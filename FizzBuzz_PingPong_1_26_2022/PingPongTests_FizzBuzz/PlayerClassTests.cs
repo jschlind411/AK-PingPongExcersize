@@ -5,27 +5,28 @@ namespace FizzBuzz_Tests
 {
     public class PlayerClassTests
     {
+        private Player player;
+
+        public PlayerClassTests()
+        {
+            player = new Player();
+        }
+
         [Fact]
         public void Player_CanBeCreated()
         {
-            var result = new Player();
-
-            Assert.NotNull(result); 
+            Assert.NotNull(player); 
         }
 
         [Fact]
         public void Player_hasIntScoreProperty()
         {
-            var player = new Player();
-
             Assert.IsType<int>(player.Score);
         }
 
         [Fact]
         public void AddScore_ScoreAddsOne()
         {
-            var player = new Player();
-
             player.AddScore();
         
             Assert.Equal(1, player.Score);
@@ -33,6 +34,12 @@ namespace FizzBuzz_Tests
             player.AddScore();
         
             Assert.Equal(2, player.Score);
+        }
+
+        [Fact]
+        public void Player_hasAName()
+        {
+            Assert.IsType<string>(player.Name);
         }
     }
 }
