@@ -40,7 +40,6 @@ namespace FizzBuzz_Tests
             }
         }
 
-
         [Fact]
         public void FizzBuzzGame_CanBeCreated()
         {
@@ -72,12 +71,17 @@ namespace FizzBuzz_Tests
 
             Assert.False(result);
         }
+        
 
-        [Fact]
-        public void CreatePlayer_CreatesPlayerObject_WithAGivenName_AndZeroScore()
+        public class PlayersFunctionality:FizzBuzzGame
         {
-            fizzBuzz.CreatePlayer("Name");
-            //Player result = fizzBuzz.Players;
+            [Fact]
+            public void CreatePlayer_CreatesPlayerObject_WithAGivenName_AndZeroScore()
+            {
+                CreatePlayer("Name");
+
+                Assert.NotNull(Players[0]);
+            }
         }
 
         [Fact]
@@ -87,5 +91,7 @@ namespace FizzBuzz_Tests
 
             Assert.NotNull(result);
         }
+
     }
+        
 }
