@@ -32,7 +32,7 @@ namespace FizzBuzz_Models
             return new Player();
         }
 
-        public void CreatePlayer()
+        public void CreatePlayer(string name)
         {
             
         }
