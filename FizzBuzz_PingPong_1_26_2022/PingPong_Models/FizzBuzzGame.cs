@@ -24,9 +24,9 @@ namespace FizzBuzz_Models
             return _gameHelper.DetermineIfGuessWasCorrect(guess, result);
         }
 
-        public void GetWinner()
+        public Player GetWinner()
         {
-
+            return null;
         }
     }
 }
