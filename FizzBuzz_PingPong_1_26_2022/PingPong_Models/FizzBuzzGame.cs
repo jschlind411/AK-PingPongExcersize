@@ -1,4 +1,5 @@
 ﻿using FizzBuzz_Models.Interfaces;
+using System.Collections.Generic;
 
 namespace FizzBuzz_Models
 {
@@ -8,6 +9,7 @@ namespace FizzBuzz_Models
         protected IGameHelper _gameHelper;
 
         public int Score { get; private set; } = 0;
+        protected List<Player> Players { get; set; }
 
         public FizzBuzzGame() : this(new FizzBuzzer(), new GameHelper()) { }
 
@@ -15,6 +17,7 @@ namespace FizzBuzz_Models
         {
             fizzBuzzer = fizzbuzzer;
             _gameHelper = gameHelper;
+            Players = new List<Player>();
         }
 
         public bool Verify(string guess, int value)
