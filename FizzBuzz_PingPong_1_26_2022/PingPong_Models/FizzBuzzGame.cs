@@ -10,6 +10,7 @@ namespace FizzBuzz_Models
 
         public int Score { get; private set; } = 0;
         protected List<Player> Players { get; set; }
+        public int CurrentNumber { get; set; } = 0;
 
         public FizzBuzzGame() : this(new FizzBuzzer(), new GameHelper()) { }
 
