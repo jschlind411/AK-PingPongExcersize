@@ -47,6 +47,12 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
+        public void CurrentNumber_IsCreated_WithInFizzBuzzGame()
+        {
+            Assert.IsType<int>(fizzBuzz.CurrentNumber);
+        }
+
+        [Fact]
         public void Verify_GivenAnyStringAndInteger_ReturnsBoolResult()
         {
             var result = fizzBuzz.Verify("", 0);
@@ -71,7 +77,6 @@ namespace FizzBuzz_Tests
 
             Assert.False(result);
         }
-        
 
         public class PlayersFunctionality:FizzBuzzGame
         {
@@ -82,8 +87,11 @@ namespace FizzBuzz_Tests
 
                 Assert.NotNull(Players[0]);
                 Assert.Equal("Name", Players[0].Name);
+                Assert.Equal(0, Players[0].Score);
             }
         }
+
+
 
         [Fact]
         public void GetWinner_ReturnsPlayerNameAndScore()
