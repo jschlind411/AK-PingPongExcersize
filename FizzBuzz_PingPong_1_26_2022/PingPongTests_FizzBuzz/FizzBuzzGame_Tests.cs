@@ -67,9 +67,17 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
+        public void CreatePlayer_CreatesPlayerObject()
+        {
+            fizzBuzz.CreatePlayer();
+        }
+
+        [Fact]
         public void GetWinner_ReturnsPlayerNameAndScore()
         {
             Player result = fizzBuzz.GetWinner();
+
+            Assert.NotNull(result);
         }
     }
 }
