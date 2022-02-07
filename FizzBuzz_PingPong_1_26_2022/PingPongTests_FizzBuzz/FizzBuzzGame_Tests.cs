@@ -29,6 +29,8 @@ namespace FizzBuzz_Tests
         {
             var game = new FizzBuzzGame();
             game.AddPlayer("Bill");
+
+            Assert.True(game.Players.Count == 1);
         }
 
     }
