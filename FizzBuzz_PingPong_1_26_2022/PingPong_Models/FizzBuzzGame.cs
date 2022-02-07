@@ -1,4 +1,5 @@
 ﻿using FizzBuzz_Models.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace FizzBuzz_Models
@@ -10,6 +11,11 @@ namespace FizzBuzz_Models
         public FizzBuzzGame()
         {
             Players = new List<Player>();
+        }
+
+        public void AddPlayer(string name)
+        {
+            
         }
     }
 }
