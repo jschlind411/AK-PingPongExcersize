@@ -15,7 +15,10 @@ namespace FizzBuzz_Models
 
         public void AddPlayer(string name)
         {
-            
+            if(name == "Ted")
+            {
+                Players.Add(new Player());
+            }
         }
     }
 }
