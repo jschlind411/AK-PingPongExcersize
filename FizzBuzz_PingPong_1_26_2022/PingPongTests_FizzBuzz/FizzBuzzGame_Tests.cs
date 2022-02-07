@@ -28,7 +28,7 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void AddPlayer_AddsPlayer_ToPlayersList()
+        public void AddPlayer_GivenAStringName_AddsPlayerToPlayersList()
         {
             game.AddPlayer("Bill");
 
@@ -37,6 +37,12 @@ namespace FizzBuzz_Tests
             game.AddPlayer("Ted");
 
             Assert.True(game.Players.Count == 2);
+        }
+
+        [Fact]
+        public void GetStartPlayer_GetsStartingPlayer()
+        {
+            game.GetStartPlayer();
         }
 
     }
