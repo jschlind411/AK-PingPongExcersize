@@ -25,19 +25,19 @@ namespace FizzBuzz_Tests
         public void PlayersList_IsInFizzBuzzGame()
         {
             Assert.IsType<List<Player>>(game.Players);
+            Assert.True(game.Players.Count == 0);
         }
 
-        [Fact]
-        public void AddPlayer_GivenAStringName_AddsPlayerToPlayersList()
+        [Theory]
+        [InlineData("Bill")]
+        [InlineData("Ted")]
+        [InlineData("Rufus")]
+        public void AddPlayer_GivenAStringName_AddsPlayerToPlayersList(string name)
         {
-            game.AddPlayer("Bill");
+            game.AddPlayer(name);
 
             Assert.True(game.Players.Count == 1);
-            Assert.Equal("Bill", game.Players[0].Name);
-
-            game.AddPlayer("Ted");
-
-            Assert.True(game.Players.Count == 2);
+            Assert.Equal(name, game.Players[0].Name);
         }
 
         [Fact]
