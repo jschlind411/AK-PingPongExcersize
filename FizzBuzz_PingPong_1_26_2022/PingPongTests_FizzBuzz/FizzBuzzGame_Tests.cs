@@ -41,7 +41,7 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void GetStartPlayer_GetsStartingPlayer()
+        public void GetStartPlayer_ReturnsPlayerObject()
         {
             
             var result = game.GetStartPlayer();
@@ -49,6 +49,14 @@ namespace FizzBuzz_Tests
             Assert.IsType<Player>(result);
         }
 
+        [Fact]
+        public void GetStartPlayer_GivenAPlayerList_WithOnePlayer_ReturnsCorrectPlayer()
+        {
+            game.AddPlayer("Bob");
+            Player player = game.GetStartPlayer();
+
+            Assert.Equal("Bob", player.Name);
+        }
     }
         
 }

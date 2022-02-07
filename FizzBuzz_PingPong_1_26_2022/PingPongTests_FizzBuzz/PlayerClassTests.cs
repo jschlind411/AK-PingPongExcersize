@@ -22,6 +22,7 @@ namespace FizzBuzz_Tests
         public void Player_HasIntScoreProperty()
         {
             Assert.IsType<int>(player.Score);
+            Assert.True(player.Score == 0);
         }
 
         [Fact]
