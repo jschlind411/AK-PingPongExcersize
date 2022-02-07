@@ -20,7 +20,7 @@ namespace FizzBuzz_Models
 
         public Player GetStartPlayer()
         {
-            return new Player();
+            return new Player() { Name = "Bob"};
         }
     }
 }
