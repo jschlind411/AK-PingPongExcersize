@@ -20,7 +20,12 @@ namespace FizzBuzz_Models
 
         public Player GetStartPlayer()
         {
-            return new Player() { Name = "Bob"};
+            if(Players.Count != 0)
+            {
+                return Players[0];
+            }
+
+            return new Player();
         }
     }
 }
