@@ -10,7 +10,7 @@ namespace FizzBuzz_Models
 
         public FizzBuzzGame()
         {
-            Players = new List<Player>();
+            Players = new List<Player>() { new Player()} ;
         }
 
         public void AddPlayer(string name)
