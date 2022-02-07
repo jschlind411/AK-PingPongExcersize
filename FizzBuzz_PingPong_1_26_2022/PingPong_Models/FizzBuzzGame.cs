@@ -20,5 +20,10 @@ namespace FizzBuzz_Models
                 Players.Add(new Player());
             }
         }
+
+        public Player GetStartPlayer()
+        {
+            return new Player();
+        }
     }
 }
