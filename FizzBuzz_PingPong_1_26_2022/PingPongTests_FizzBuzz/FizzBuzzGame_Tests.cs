@@ -8,7 +8,21 @@ namespace FizzBuzz_Tests
 {
     public class FizzBuzzGame_Tests
     {
-        
+        [Fact]
+        public void FizzBuzzGame_CanBeCreated()
+        {
+            var game = new FizzBuzzGame();
+
+            Assert.NotNull(game);
+        }
+
+        [Fact]
+        public void PlayersList_IsInFizzBuzzGame()
+        {
+            var game = new FizzBuzzGame();
+
+            Assert.IsType<List<Player>>(game.Players);
+        }
 
     }
         
