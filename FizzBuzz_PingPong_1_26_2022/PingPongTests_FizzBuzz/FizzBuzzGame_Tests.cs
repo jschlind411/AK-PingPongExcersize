@@ -24,6 +24,13 @@ namespace FizzBuzz_Tests
             Assert.IsType<List<Player>>(game.Players);
         }
 
+        [Fact]
+        public void AddPlayer_AddsPlayer_ToPlayersList()
+        {
+            var game = new FizzBuzzGame();
+            game.AddPlayer("Bill");
+        }
+
     }
         
 }
