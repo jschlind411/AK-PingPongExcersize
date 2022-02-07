@@ -33,6 +33,7 @@ namespace FizzBuzz_Tests
             game.AddPlayer("Bill");
 
             Assert.True(game.Players.Count == 1);
+            Assert.Equal("Bill", game.Players[0].Name);
 
             game.AddPlayer("Ted");
 
@@ -42,7 +43,10 @@ namespace FizzBuzz_Tests
         [Fact]
         public void GetStartPlayer_GetsStartingPlayer()
         {
-            game.GetStartPlayer();
+            
+            var result = game.GetStartPlayer();
+
+            Assert.IsType<Player>(result);
         }
 
     }
