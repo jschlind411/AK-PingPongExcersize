@@ -5,6 +5,11 @@ namespace FizzBuzz_Models
 {
     public class FizzBuzzGame
     {
-        
+        public List<Player> Players { get; set; }
+
+        public FizzBuzzGame()
+        {
+            Players = new List<Player>();
+        }
     }
 }
