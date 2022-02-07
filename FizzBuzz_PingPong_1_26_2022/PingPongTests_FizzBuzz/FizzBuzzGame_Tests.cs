@@ -56,6 +56,7 @@ namespace FizzBuzz_Tests
             Player player = game.GetStartPlayer();
 
             Assert.Equal("Bob", player.Name);
+            Assert.Equal(game.Players[0], player);
         }
     }
         
