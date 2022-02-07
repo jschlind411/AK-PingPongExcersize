@@ -10,15 +10,12 @@ namespace FizzBuzz_Models
 
         public FizzBuzzGame()
         {
-            Players = new List<Player>() { new Player() { Name = "Bill" } } ;
+            Players = new List<Player>();
         }
 
         public void AddPlayer(string name)
         {
-            if(name == "Ted")
-            {
-                Players.Add(new Player() { Name = "Ted" } );
-            }
+            Players.Add(new Player() { Name = name });
         }
 
         public Player GetStartPlayer()
