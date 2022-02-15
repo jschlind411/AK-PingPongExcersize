@@ -35,6 +35,12 @@ namespace FizzBuzz_Tests
             Assert.IsType<Random>(game.RandomGenerator);
         }
 
+        [Fact]
+        public void CurrentNumber_IsInFizzBuzzGame_AndCreatedWithDefaults()
+        {
+            Assert.IsType<int>(game.CurrentNumber);
+        }
+
         [Theory]
         [InlineData("Bill")]
         [InlineData("Ted")]
