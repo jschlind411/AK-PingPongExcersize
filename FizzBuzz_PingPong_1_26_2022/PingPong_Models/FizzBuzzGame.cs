@@ -8,9 +8,12 @@ namespace FizzBuzz_Models
     {
         public List<Player> Players { get; set; }
 
+        public Random RandomGenerator { get; set; }
+
         public FizzBuzzGame()
         {
             Players = new List<Player>();
+            RandomGenerator = new Random();
         }
 
         public void AddPlayer(string name)
