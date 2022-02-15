@@ -25,7 +25,7 @@ namespace FizzBuzz_Models
         {
             if(Players.Count != 0)
             {
-                return Players[0];
+                return Players[RandomGenerator.Next(0, Players.Count)];
             }
 
             return new Player();
