@@ -10,10 +10,13 @@ namespace FizzBuzz_Models
 
         public Random RandomGenerator { get; set; }
 
+        public int CurrentNumber { get; set; }
+
         public FizzBuzzGame()
         {
             Players = new List<Player>();
             RandomGenerator = new Random();
+            CurrentNumber = 1;
         }
 
         public void AddPlayer(string name)
