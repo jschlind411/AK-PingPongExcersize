@@ -33,7 +33,6 @@ namespace FizzBuzz_Tests
         public void Random_IsInFizzBuzzGame()
         {
             Assert.IsType<Random>(game.RandomGenerator);
-            //Assert.True(game.Players.Count == 0);
         }
 
         [Theory]
@@ -67,23 +66,13 @@ namespace FizzBuzz_Tests
         }
 
         [Fact]
-        public void GetRandomInt_FromList()
-        {
-            //Depenciees
-            //A list w/ at least one player
-            //Random class object - low bound = 0 and upper bound = list.Count
-                //create Test to create random
-        }
-
-
-
-        [Fact]
         public void GetStartPlayer_GivenAPlayerList_WithMultiplePlayers_ReturnsOneAtRandom()
         {
             game.AddPlayer("Bill");
             game.AddPlayer("Ted");
-
             Player player = game.GetStartPlayer();
+
+            Assert.Contains(player, game.Players);
         } 
     }
         
