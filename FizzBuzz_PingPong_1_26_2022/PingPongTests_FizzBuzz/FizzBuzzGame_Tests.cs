@@ -39,6 +39,7 @@ namespace FizzBuzz_Tests
         public void CurrentNumber_IsInFizzBuzzGame_AndCreatedWithDefaults()
         {
             Assert.IsType<int>(game.CurrentNumber);
+            Assert.Equal(1, game.CurrentNumber);
         }
 
         [Theory]
