@@ -1,6 +1,7 @@
 ﻿using FizzBuzz_Models;
 using FizzBuzz_Models.Interfaces;
 using Moq;
+using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -28,6 +29,13 @@ namespace FizzBuzz_Tests
             Assert.True(game.Players.Count == 0);
         }
 
+        [Fact]
+        public void Random_IsInFizzBuzzGame()
+        {
+            Assert.IsType<Random>(game.RandomGenerator);
+            //Assert.True(game.Players.Count == 0);
+        }
+
         [Theory]
         [InlineData("Bill")]
         [InlineData("Ted")]
@@ -43,7 +51,6 @@ namespace FizzBuzz_Tests
         [Fact]
         public void GetStartPlayer_ReturnsPlayerObject()
         {
-            
             var result = game.GetStartPlayer();
 
             Assert.IsType<Player>(result);
@@ -58,6 +65,26 @@ namespace FizzBuzz_Tests
             Assert.Equal("Bob", player.Name);
             Assert.Equal(game.Players[0], player);
         }
+
+        [Fact]
+        public void GetRandomInt_FromList()
+        {
+            //Depenciees
+            //A list w/ at least one player
+            //Random class object - low bound = 0 and upper bound = list.Count
+                //create Test to create random
+        }
+
+
+
+        [Fact]
+        public void GetStartPlayer_GivenAPlayerList_WithMultiplePlayers_ReturnsOneAtRandom()
+        {
+            game.AddPlayer("Bill");
+            game.AddPlayer("Ted");
+
+            Player player = game.GetStartPlayer();
+        } 
     }
         
 }
