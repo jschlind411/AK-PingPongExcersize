@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using Models;
 
 namespace WooordleTests
 {
@@ -8,7 +9,7 @@ namespace WooordleTests
         [Fact]
         public void Player_exists()
         {
-            var player = Player();
+            var player = new Player();
         }
     }
 }
