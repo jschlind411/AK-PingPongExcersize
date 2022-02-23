@@ -14,37 +14,27 @@ namespace WooordleTests
         }
             
         [Fact]
-        public void Player_Exists()
+        public void Player_CanBeCreated()
         {
             Assert.IsType<Player>(player);
         }
 
         [Fact]
-        public void Name_Exists()
-        {
-            Assert.IsType<string>(player.Name);
-        }
-
-        [Fact]
-        public void Score_Exists()
+        public void PlayerHas_IntScore_AndInitalizedToZero()
         {
             Assert.IsType<int>(player.Score);
-        }
-
-        [Fact]
-        public void Score_InitalizedToZero()
-        {
             Assert.Equal(0, player.Score);
         }
 
         [Fact]
-        public void Name_NoPassedString_InitalizedToEmpty()
+        public void PlayerHas_StringName_AndNoPassedString_IsEmpty()
         {
+            Assert.IsType<string>(player.Name);
             Assert.Equal("", player.Name);
         }
 
         [Fact]
-        public void Name_PassedString_InitalizedToString()
+        public void PlayerHas_StringName_AndPassedString_SetsName()
         {
             Player player = new Player("Andy");
 
