@@ -7,9 +7,19 @@ namespace WooordleTests
     public class PlayerTests
     {
         [Fact]
-        public void Player_exists()
+        public void Player_Exists()
         {
             var player = new Player();
+
+            Assert.IsType<Player>(player);
+        }
+
+        [Fact]
+        public void Name_Exists()
+        {
+            var player = new Player();
+
+            Assert.IsType<string>(Player.Name);
         }
     }
 }
