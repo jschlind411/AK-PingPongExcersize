@@ -48,7 +48,7 @@ namespace WooordleTests
         {
             Player player = new Player("Andy");
 
-            //Assert.Equal("Andy", player.Name);
+            Assert.Equal("Andy", player.Name);
         }
     }
 }
