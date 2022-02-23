@@ -6,28 +6,47 @@ namespace WooordleTests
 {
     public class PlayerTests
     {
+        public Player player;
+
+        public PlayerTests()
+        {
+            player = new Player();
+        }
+            
         [Fact]
         public void Player_Exists()
         {
-            var player = new Player();
-
             Assert.IsType<Player>(player);
         }
 
         [Fact]
         public void Name_Exists()
         {
-            var player = new Player();
-
             Assert.IsType<string>(Player.Name);
         }
 
         [Fact]
         public void Score_Exists()
         {
-            var player = new Player();
-
             Assert.IsType<int>(Player.Score);
+        }
+
+        [Fact]
+        public void Score_InitalizedToZero()
+        {
+            Assert.Equal(0, Player.Score);
+        }
+
+        [Fact]
+        public void Name_NoPassedString_InitalizedToEmpty()
+        {
+            Assert.Equal("", Player.Name);
+        }
+
+        [Fact]
+        public void Name_PassedString_InitalizedToString()
+        {
+            Player player = new Player("Andy");
         }
     }
 }
