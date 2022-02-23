@@ -21,5 +21,13 @@ namespace WooordleTests
 
             Assert.IsType<string>(Player.Name);
         }
+
+        [Fact]
+        public void Score_Exists()
+        {
+            var player = new Player();
+
+            Assert.IsType<int>(Player.Score);
+        }
     }
 }
