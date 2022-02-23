@@ -11,7 +11,7 @@ namespace Models
             Name = name;
         }
 
-        public static string Name { get; private set; }
-        public static int Score { get; } = 0;
+        public string Name { get; private set; }
+        public int Score { get; } = 0;
     }
 }
