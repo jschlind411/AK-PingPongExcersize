@@ -3,12 +3,12 @@ using Xunit;
 
 namespace WooordleTests
 {
-    public class UnitTest1
+    public class PlayerTests
     {
         [Fact]
-        public void Test1()
+        public void Player_exists()
         {
-
+            var player = Player();
         }
     }
 }
