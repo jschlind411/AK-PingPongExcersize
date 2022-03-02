@@ -36,12 +36,16 @@ namespace WooordleTests
 
         }
 
-        [Fact]
-        public void SetupWordList_PopulatesWordList_WithFiveStrings()
+        public class Setups: Words
         {
-            Words words = new Words();
-            words.SetupWordList();
-        }
+            [Fact]
+            public void SetupWordList_PopulatesWordList_WithOneStrings()
+            {
+                WordList.Clear();
+                SetupWordList();
 
+                Assert.True(WordList.Count() > 0);
+            }
+        }
     }
 }
