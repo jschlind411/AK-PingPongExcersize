@@ -30,6 +30,7 @@ namespace WooordleTests
             public void CurrentWord_ExistsOnCreation_WithAWord()
             {
                 Assert.IsType<string>(CurrentWord);
+                Assert.NotEqual(string.Empty, CurrentWord);
             }
         }
 
