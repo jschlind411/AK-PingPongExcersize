@@ -11,9 +11,11 @@ namespace WooordleTests
     public class WordsTests
     {
         [Fact]
-        public void CanCreateWordsObject()
+        public void Words_CanBeCreated_UsingDefaultConstructor()
         {
             Words words = new Words();
+
+            Assert.NotNull(words);
         }
 
     }
