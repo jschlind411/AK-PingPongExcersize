@@ -8,13 +8,21 @@ namespace Models
 {
     public class Words
     {
-        protected List<string> WordList { get; set; } = new List<string>() { "tests" };
+        protected List<string> WordList { get; set; }
 
         protected string CurrentWord { get; set; } = "tests";
 
-        public string SetupWordList()
+        public Words()
         {
-            return string.Empty;
+            SetupWordList();
+        }
+
+        public void SetupWordList()
+        {
+            WordList = new List<string>
+            {
+                "tests"
+            };
         }
     }
 }

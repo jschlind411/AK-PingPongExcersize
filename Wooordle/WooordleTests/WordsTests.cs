@@ -33,7 +33,6 @@ namespace WooordleTests
                 Assert.NotEqual(string.Empty, CurrentWord);
                 Assert.Contains(CurrentWord, WordList);
             }
-
         }
 
         public class Setups: Words
