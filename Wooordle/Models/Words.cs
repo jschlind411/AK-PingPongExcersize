@@ -11,5 +11,10 @@ namespace Models
         protected List<string> WordList { get; set; } = new List<string>() { "tests" };
 
         protected string CurrentWord { get; set; } = "tests";
+
+        public string SetupWordList()
+        {
+            return string.Empty;
+        }
     }
 }
