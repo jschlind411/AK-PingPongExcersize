@@ -10,6 +10,6 @@ namespace Models
     {
         protected List<string> WordList { get; set; } = new List<string>();
 
-        protected string CurrentWord { get; set; } = string.Empty;
+        protected string CurrentWord { get; set; } = "tests";
     }
 }
