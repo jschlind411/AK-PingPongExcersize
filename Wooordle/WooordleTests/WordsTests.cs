@@ -27,10 +27,11 @@ namespace WooordleTests
             }
 
             [Fact]
-            public void CurrentWord_ExistsOnCreation_WithAWord()
+            public void CurrentWord_ExistsOnCreation_WithAWord_FromWordsList()
             {
                 Assert.IsType<string>(CurrentWord);
                 Assert.NotEqual(string.Empty, CurrentWord);
+                Assert.Contains(CurrentWord, WordList);
             }
         }
 
