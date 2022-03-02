@@ -8,6 +8,6 @@ namespace Models
 {
     public class Words
     {
-        public List<string> WordList { get; set; } = new List<string>();
+        protected List<string> WordList { get; set; } = new List<string>();
     }
 }
