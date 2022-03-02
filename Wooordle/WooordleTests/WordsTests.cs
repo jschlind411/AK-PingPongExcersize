@@ -18,5 +18,13 @@ namespace WooordleTests
             Assert.NotNull(words);
         }
 
+        [Fact]
+        public void WordsHas_StringList_namedWordList()
+        {
+            Words words = new Words();
+
+            Assert.IsType<List<string>>(words.WordList);
+        }
+
     }
 }
