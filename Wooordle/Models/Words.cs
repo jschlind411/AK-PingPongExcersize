@@ -9,5 +9,7 @@ namespace Models
     public class Words
     {
         protected List<string> WordList { get; set; } = new List<string>();
+
+        protected string CurrentWord { get; set; } = string.Empty;
     }
 }
