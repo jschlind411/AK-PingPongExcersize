@@ -33,9 +33,15 @@ namespace WooordleTests
                 Assert.NotEqual(string.Empty, CurrentWord);
                 Assert.Contains(CurrentWord, WordList);
             }
+
         }
 
-
+        [Fact]
+        public void SetupWordList_PopulatesWordList_WithFiveStrings()
+        {
+            Words words = new Words();
+            words.SetupWordList();
+        }
 
     }
 }
