@@ -72,5 +72,11 @@ namespace WooordleTests
             Assert.IsType<string>(result);
             Assert.Equal(5, result.Length);
         }
+
+        [Fact]
+        public void GuessWord_ThrowsArgException_GivenAStringGreaterThan5Letters()
+        {
+            Assert.Throws<ArgumentException>(() => words.GuessWord("Not5Letters"));
+        }
     }
 }
