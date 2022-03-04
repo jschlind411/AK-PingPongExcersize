@@ -27,7 +27,7 @@ namespace WooordleTests
         [Fact]
         public void Words_CanBeCreated_UsingConstructor_ThatReceivesRulesEngine()
         {
-            RulesEngines engine = new RulesEngines();
+            RulesEngine engine = new RulesEngine();
 
             words = new Words(engine);
         }

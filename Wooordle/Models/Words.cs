@@ -6,14 +6,23 @@ namespace Models
 {
     public class Words
     {
+        private RulesEngine _engine;
+
         protected List<string> WordList { get; set; }
 
         protected List<string> UsedWords { get; set; }
 
         protected string CurrentWord { get; set; }
 
-        public Words()
+        public Words() : this(new RulesEngine())
         {
+            
+        }
+
+        public Words(RulesEngine engine)
+        {
+            _engine = engine;
+
             UsedWords = new List<string>();
             CurrentWord = "tests";
 
