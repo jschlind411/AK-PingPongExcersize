@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Models
 {
@@ -30,9 +26,9 @@ namespace Models
             };
         }
 
-        public string GuessWord()
+        public string GuessWord(string guess)
         {
-            return "string";
+            return guess;
         }
     }
 }
