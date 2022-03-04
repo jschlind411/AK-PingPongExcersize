@@ -45,12 +45,17 @@ namespace WooordleTests
         public class Setup: Words
         {
             [Fact]
-            public void SetupWordList_PopulatesWordList_WithOneStrings()
+            public void SetupWordList_PopulatesWordList_With5LetterWords()
             {
                 WordList.Clear();
 
                 SetupWordList();
                 Assert.True(WordList.Count() > 0);
+
+                foreach (string word in WordList)
+                {
+                    Assert.Equal(5, word.Length);
+                }
             }
         }
     }
