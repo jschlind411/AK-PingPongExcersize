@@ -10,7 +10,7 @@ namespace Models
     {
         protected List<string> WordList { get; set; }
 
-        protected List<string> UsedWords { get; set; };
+        protected List<string> UsedWords { get; set; }
 
         protected string CurrentWord { get; set; } = "tests";
 

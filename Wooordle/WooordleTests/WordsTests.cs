@@ -38,6 +38,7 @@ namespace WooordleTests
             public void UsedWords_ExistsOnCreation_WithNoWordsInIt()
             {
                 Assert.IsType<List<string>>(UsedWords);
+                Assert.Empty(UsedWords);
             }
         }
 
