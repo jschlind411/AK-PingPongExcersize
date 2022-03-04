@@ -67,7 +67,9 @@ namespace WooordleTests
         [Fact]
         public void GuessWord_ReturnsString()
         {
-            words.GuessWord();
+            string result = words.GuessWord();
+
+            Assert.IsType<string>(result);
         }
     }
 }
