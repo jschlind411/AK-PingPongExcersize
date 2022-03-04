@@ -65,11 +65,12 @@ namespace WooordleTests
         }
 
         [Fact]
-        public void GuessWord_ReturnsString()
+        public void GuessWord_GivenAnyString_Returns5LetterString()
         {
-            string result = words.GuessWord();
+            string result = words.GuessWord("guess");
 
             Assert.IsType<string>(result);
+            Assert.Equal(5, result.Length);
         }
     }
 }
