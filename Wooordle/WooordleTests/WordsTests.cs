@@ -74,10 +74,13 @@ namespace WooordleTests
             Assert.Equal(5, result.Length);
         }
 
-        [Fact]
-        public void GuessWord_ThrowsArgException_GivenAStringGreaterThan5Letters()
+        [Theory]
+        [InlineData("Not5Letters")]
+        [InlineData("TooManyLettersThanAccepted")]
+        [InlineData("barber")]
+        public void GuessWord_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
         {
-            Assert.Throws<WordTooLongException>(() => words.GuessWord("Not5Letters"));
+            Assert.Throws<WordTooLongException>(() => words.GuessWord(wordLongerThan5));
         }
     }
 }
