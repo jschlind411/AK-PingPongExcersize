@@ -19,9 +19,17 @@ namespace WooordleTests
         }
 
         [Fact]
-        public void Words_CanBeCreated_UsingDefaultConstructor()
+        public void Words_CanBeCreated_UsingParameterlessConstructor()
         {
             Assert.NotNull(words);
+        }
+
+        [Fact]
+        public void Words_CanBeCreated_UsingConstructor_ThatReceivesRulesEngine()
+        {
+            RulesEngines engine = new RulesEngines();
+
+            words = new Words(engine);
         }
 
         public class Properties: Words
