@@ -34,6 +34,10 @@ namespace Models
             {
                 throw new WordTooLongException();
             }
+            else if(guess.Length < 5)
+            {
+                throw new WordTooShortException();
+            }
 
             return guess;
         }
@@ -54,6 +58,26 @@ namespace Models
             }
 
             protected WordTooLongException(SerializationInfo info, StreamingContext context) : base(info, context)
+            {
+            }
+        }
+
+        [Serializable]
+        public class WordTooShortException : Exception
+        {
+            public WordTooShortException()
+            {
+            }
+
+            public WordTooShortException(string message) : base(message)
+            {
+            }
+
+            public WordTooShortException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+
+            protected WordTooShortException(SerializationInfo info, StreamingContext context) : base(info, context)
             {
             }
         }
