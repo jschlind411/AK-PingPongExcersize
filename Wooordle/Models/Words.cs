@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Models
 {
@@ -28,7 +30,32 @@ namespace Models
 
         public string GuessWord(string guess)
         {
+            if(guess.Length > 5)
+            {
+                throw new WordTooLongException();
+            }
+
             return guess;
+        }
+
+        [Serializable]
+        public class WordTooLongException : Exception
+        {
+            public WordTooLongException()
+            {
+            }
+
+            public WordTooLongException(string message) : base(message)
+            {
+            }
+
+            public WordTooLongException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+
+            protected WordTooLongException(SerializationInfo info, StreamingContext context) : base(info, context)
+            {
+            }
         }
     }
 }

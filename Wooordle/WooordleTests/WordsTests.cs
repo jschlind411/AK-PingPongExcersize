@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using static Models.Words;
 
 namespace WooordleTests
 {
@@ -76,7 +77,7 @@ namespace WooordleTests
         [Fact]
         public void GuessWord_ThrowsArgException_GivenAStringGreaterThan5Letters()
         {
-            Assert.Throws<ArgumentException>(() => words.GuessWord("Not5Letters"));
+            Assert.Throws<WordTooLongException>(() => words.GuessWord("Not5Letters"));
         }
     }
 }
