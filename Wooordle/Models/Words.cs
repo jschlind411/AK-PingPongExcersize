@@ -30,9 +30,9 @@ namespace Models
             };
         }
 
-        public void GuessWord()
+        public string GuessWord()
         {
-
+            return "string";
         }
     }
 }
