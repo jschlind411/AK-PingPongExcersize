@@ -29,5 +29,10 @@ namespace Models
                 "tests"
             };
         }
+
+        public void GuessWord()
+        {
+
+        }
     }
 }
