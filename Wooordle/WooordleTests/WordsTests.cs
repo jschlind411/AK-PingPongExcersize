@@ -82,5 +82,14 @@ namespace WooordleTests
         {
             Assert.Throws<WordTooLongException>(() => words.GuessWord(wordLongerThan5));
         }
+
+        [Theory]
+        [InlineData("one")]
+        [InlineData("four")]
+        [InlineData("hi")]
+        public void GuessWord_ThrowsWordTooShotException_GivenAStringShorterThan5Letters(string wordShorterThan5)
+        {
+            Assert.Throws<WordTooShortException>(() => words.GuessWord(wordShorterThan5));
+        }
     }
 }
