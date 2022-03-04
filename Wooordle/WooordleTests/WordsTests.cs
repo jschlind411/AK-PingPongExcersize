@@ -10,11 +10,16 @@ namespace WooordleTests
 {
     public class WordsTests
     {
+        public Words words;
+
+        public WordsTests()
+        {
+            words = new Words();
+        }
+
         [Fact]
         public void Words_CanBeCreated_UsingDefaultConstructor()
         {
-            Words words = new Words();
-
             Assert.NotNull(words);
         }
 
@@ -57,6 +62,12 @@ namespace WooordleTests
                     Assert.Equal(5, word.Length);
                 }
             }
+        }
+
+        [Fact]
+        public void GuessWord_ReturnsString()
+        {
+            words.GuessWord();
         }
     }
 }
