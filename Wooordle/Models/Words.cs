@@ -12,10 +12,13 @@ namespace Models
 
         protected List<string> UsedWords { get; set; }
 
-        protected string CurrentWord { get; set; } = "tests";
+        protected string CurrentWord { get; set; }
 
         public Words()
         {
+            UsedWords = new List<string>();
+            CurrentWord = "tests";
+
             SetupWordList();
         }
 
