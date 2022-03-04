@@ -17,7 +17,7 @@ namespace Models
             SetupWordList();
         }
 
-        public void SetupWordList()
+        protected void SetupWordList()
         {
             WordList = new List<string>
             {

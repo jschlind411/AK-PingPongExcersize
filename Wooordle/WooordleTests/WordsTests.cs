@@ -33,16 +33,22 @@ namespace WooordleTests
                 Assert.NotEqual(string.Empty, CurrentWord);
                 Assert.Contains(CurrentWord, WordList);
             }
+
+            [Fact]
+            public void UsedWords_ExistsOnCreation_WithNoWordsInIt()
+            {
+                Assert.IsType<List<string>>(UsedWords);
+            }
         }
 
-        public class Setups: Words
+        public class Setup: Words
         {
             [Fact]
             public void SetupWordList_PopulatesWordList_WithOneStrings()
             {
                 WordList.Clear();
-                SetupWordList();
 
+                SetupWordList();
                 Assert.True(WordList.Count() > 0);
             }
         }
