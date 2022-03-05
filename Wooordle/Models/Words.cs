@@ -6,7 +6,7 @@ namespace Models
 {
     public class Words
     {
-        private RulesEngine _engine;
+        protected IRulesEngine _engine;
 
         protected List<string> WordList { get; set; }
 
@@ -19,7 +19,7 @@ namespace Models
             
         }
 
-        public Words(RulesEngine engine)
+        public Words(IRulesEngine engine)
         {
             _engine = engine;
 

@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public class RulesEngine
+    public class RulesEngine: IRulesEngine
     {
         public RulesEngine()
         {
