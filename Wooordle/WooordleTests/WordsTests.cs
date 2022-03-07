@@ -144,5 +144,11 @@ namespace WooordleTests
         {
             Assert.Throws<WordTooShortException>(() => words.GuessWord(wordShorterThan5));
         }
+
+        [Fact]
+        public void GuessWord_ThrowsException_IfWordFailsWordRuleValidation()
+        {
+            _engine.Setup(x => x.ValidateWordIsValid()).Returns(false);
+        }
     }
 }
