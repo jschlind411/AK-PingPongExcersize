@@ -63,7 +63,9 @@ namespace WooordleTests
 
         public class OverloadedConstructorTests : Words
         {
-            public OverloadedConstructorTests() : base(new RulesEngine())
+            public static RulesEngine Rules { get; set; } = new RulesEngine();
+
+            public OverloadedConstructorTests() : base(Rules)
             {
 
             }
@@ -94,6 +96,7 @@ namespace WooordleTests
             {
                 Assert.IsType<RulesEngine>(_engine);
                 Assert.NotNull(_engine);
+                Assert.Equal(Rules, _engine);
             }
         }
 
