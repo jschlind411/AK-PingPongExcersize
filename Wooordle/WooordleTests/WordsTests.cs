@@ -121,7 +121,9 @@ namespace WooordleTests
         [Fact]
         public void GuessWord_GivenAnyString_Returns5LetterString()
         {
-            string result = words.GuessWord("guess");
+            var message = "guess";
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out message)).Returns(true);
+            string result = words.GuessWord(message);
 
             Assert.IsType<string>(result);
             Assert.Equal(5, result.Length);
@@ -162,7 +164,7 @@ namespace WooordleTests
             _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(false);
 
             var ex = Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
-            Assert.Equal($"{invalidWord} not valid", ex.Message);
+            Assert.Equal($"{invalidWord} is not valid", ex.Message);
         }
     }
 }

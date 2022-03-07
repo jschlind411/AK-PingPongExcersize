@@ -39,17 +39,18 @@ namespace Models
 
         public string GuessWord(string guess)
         {
-            if(guess.Length > 5)
-            {
-                throw new WordTooLongException();
-            }
-            else if(guess.Length < 5)
-            {
-                throw new WordTooShortException();
-            }
             if (!_engine.WordIsValid(guess, out string message))
             {
-                throw new WordNotValidException();
+                if (guess.Length > 5)
+                {
+                    throw new WordTooLongException(message);
+                }
+                else if (guess.Length < 5)
+                {
+                    throw new WordTooShortException(message);
+                }
+
+                throw new WordNotValidException(message);
             }
 
             return guess;
