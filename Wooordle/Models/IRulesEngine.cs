@@ -2,6 +2,6 @@
 {
     public interface IRulesEngine
     {
-        bool WordIsValid(string v);
+        bool WordIsValid(string v, out string message);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Models;
 using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -132,7 +133,11 @@ namespace WooordleTests
         [InlineData("barber")]
         public void GuessWord_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
         {
-            Assert.Throws<WordTooLongException>(() => words.GuessWord(wordLongerThan5));
+            var errorMessage = "Word is too long";
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(false);
+
+            var ex = Assert.Throws<WordTooLongException>(() => words.GuessWord(wordLongerThan5));
+            Assert.Equal("Word is too long", ex.Message);
         }
 
         [Theory]
@@ -142,15 +147,22 @@ namespace WooordleTests
         [InlineData("I")]
         public void GuessWord_ThrowsWordTooShotException_GivenAStringShorterThan5Letters(string wordShorterThan5)
         {
-            Assert.Throws<WordTooShortException>(() => words.GuessWord(wordShorterThan5));
+            var errorMessage = $"{wordShorterThan5} is too short";
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(false);
+
+            var ex = Assert.Throws<WordTooShortException>(() => words.GuessWord(wordShorterThan5));
+            Assert.Equal($"{wordShorterThan5} is too short", ex.Message);
         }
 
-        [Fact]
-        public void GuessWord_ThrowsException_IfWordFailsWordRuleValidation()
+        [Theory]
+        [InlineData("zZzZz")]
+        public void GuessWord_ThrowsException_IfWordFailsWordRuleValidation(string invalidWord)
         {
-            _engine.Setup(x => x.WordIsValid(It.IsAny<string>())).Returns(false);
+            var errorMessage = $"{invalidWord} is not valid";
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(false);
 
-            Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
+            var ex = Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
+            Assert.Equal($"{invalidWord} not valid", ex.Message);
         }
     }
 }

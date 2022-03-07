@@ -47,7 +47,7 @@ namespace Models
             {
                 throw new WordTooShortException();
             }
-            if (!_engine.WordIsValid(guess))
+            if (!_engine.WordIsValid(guess, out string message))
             {
                 throw new WordNotValidException();
             }

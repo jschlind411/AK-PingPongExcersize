@@ -6,8 +6,9 @@
         {
         }
 
-        public bool WordIsValid(string v)
+        public bool WordIsValid(string v, out string message)
         {
+            message = string.Empty;
             return true;
         }
     }
