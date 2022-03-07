@@ -133,11 +133,11 @@ namespace WooordleTests
         [InlineData("barber")]
         public void GuessWord_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
         {
-            var errorMessage = "Word is too long";
+            var errorMessage = $"{wordLongerThan5} is too long";
             _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(false);
 
             var ex = Assert.Throws<WordTooLongException>(() => words.GuessWord(wordLongerThan5));
-            Assert.Equal("Word is too long", ex.Message);
+            Assert.Equal($"{wordLongerThan5} is too long", ex.Message);
         }
 
         [Theory]
