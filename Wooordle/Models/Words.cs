@@ -47,6 +47,10 @@ namespace Models
             {
                 throw new WordTooShortException();
             }
+            if (!_engine.WordIsValid(guess))
+            {
+                throw new WordNotValidException();
+            }
 
             return guess;
         }
@@ -87,6 +91,26 @@ namespace Models
             }
 
             protected WordTooShortException(SerializationInfo info, StreamingContext context) : base(info, context)
+            {
+            }
+        }
+
+        [Serializable]
+        public class WordNotValidException : Exception
+        {
+            public WordNotValidException()
+            {
+            }
+
+            public WordNotValidException(string message) : base(message)
+            {
+            }
+
+            public WordNotValidException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+
+            protected WordNotValidException(SerializationInfo info, StreamingContext context) : base(info, context)
             {
             }
         }

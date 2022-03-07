@@ -150,7 +150,7 @@ namespace WooordleTests
         {
             _engine.Setup(x => x.WordIsValid(It.IsAny<string>())).Returns(false);
 
-            Assert.Throws<WordNotValidException>(() => WordIsValid());
+            Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
         }
     }
 }
