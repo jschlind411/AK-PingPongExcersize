@@ -148,7 +148,9 @@ namespace WooordleTests
         [Fact]
         public void GuessWord_ThrowsException_IfWordFailsWordRuleValidation()
         {
-            _engine.Setup(x => x.ValidateWordIsValid(It.IsAny<string>())).Returns(false);
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>())).Returns(false);
+
+            Assert.Throws<WordNotValidException>(() => WordIsValid());
         }
     }
 }

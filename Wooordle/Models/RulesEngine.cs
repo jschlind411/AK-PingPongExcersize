@@ -6,7 +6,7 @@
         {
         }
 
-        public bool ValidateWordIsValid(string v)
+        public bool WordIsValid(string v)
         {
             return true;
         }
