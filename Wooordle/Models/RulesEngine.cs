@@ -5,5 +5,10 @@
         public RulesEngine()
         {
         }
+
+        public bool ValidateWordIsValid(string v)
+        {
+            return true;
+        }
     }
 }
