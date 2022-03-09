@@ -118,6 +118,19 @@ namespace WooordleTests
             }
         }
 
+        public class ProtectedValues: Words
+        {
+            [Fact]
+            public void ChangeCurrentWord_SetsWordFromWordList_AsCurrentWord()
+            {
+                string Current = CurrentWord;
+                ChangeCurrentWord(CurrentWord);
+
+                Assert.True(Current != CurrentWord);
+                Assert.Contains(CurrentWord, WordList);
+            }
+        }
+
         [Fact]
         public void GuessWord_GivenAnyString_ReturnsStringResponse_FromCompareWordsResult()
         {
@@ -169,6 +182,20 @@ namespace WooordleTests
 
             WordNotValidException ex = Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
             Assert.Equal($"{invalidWord} is not valid", ex.Message);
+        }
+
+        [Fact]
+        public void GuessWord_ReturnsWinMessage_IfEngineCompareWord_ReturnsGuessedWord()
+        {
+            string errorMessage = "";
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(true);
+
+            string guessWord = "guess";
+            _engine.Setup(x => x.CompareWords(It.IsAny<string>(), It.IsAny<string>())).Returns(guessWord);
+            
+            string result = words.GuessWord(guessWord);
+
+            Assert.Equal($"{guessWord} Nicely Done!", result);
         }
     }
 }

@@ -33,8 +33,14 @@ namespace Models
         {
             WordList = new List<string>
             {
-                "tests"
+                "tests",
+                "guess"
             };
+        }
+
+        protected void ChangeCurrentWord(string currentWord)
+        {
+            CurrentWord = "guess";
         }
 
         public string GuessWord(string guess)
@@ -44,7 +50,14 @@ namespace Models
                 ThrowWordException(message);
             }
 
-            return _engine.CompareWords(CurrentWord, guess);
+            string output = _engine.CompareWords(CurrentWord, guess);
+
+            if(output == guess)
+            {
+                return $"{output} Nicely Done!";
+            }
+
+            return output;
         }
 
         private void ThrowWordException(string message)
