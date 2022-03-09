@@ -41,16 +41,18 @@ namespace Models
         {
             if (!_engine.WordIsValid(guess, out string message))
             {
-                if (guess.Length > 5)
+                if (message.Contains("long"))
                 {
                     throw new WordTooLongException(message);
                 }
-                else if (guess.Length < 5)
+                else if (message.Contains("short"))
                 {
                     throw new WordTooShortException(message);
                 }
-
-                throw new WordNotValidException(message);
+                else
+                {
+                    throw new WordNotValidException(message);
+                }
             }
 
             return guess;
