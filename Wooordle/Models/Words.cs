@@ -44,7 +44,7 @@ namespace Models
                 ThrowWordException(message);
             }
 
-            return guess;
+            return _engine.CompareWords(CurrentWord, guess);
         }
 
         private void ThrowWordException(string message)

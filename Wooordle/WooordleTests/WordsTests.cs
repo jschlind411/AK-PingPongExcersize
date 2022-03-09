@@ -119,14 +119,18 @@ namespace WooordleTests
         }
 
         [Fact]
-        public void GuessWord_GivenAnyString_Returns5LetterString()
+        public void GuessWord_GivenAnyString_ReturnsStringResponse_FromCompareWordsResult()
         {
-            var message = "guess";
+            string message = "";
             _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out message)).Returns(true);
+
+            string responseFromRulesEngine = "guess";
+            _engine.Setup(x => x.CompareWords(It.IsAny<string>(), It.IsAny<string>())).Returns(responseFromRulesEngine);
+
             string result = words.GuessWord(message);
 
             Assert.IsType<string>(result);
-            Assert.Equal(5, result.Length);
+            Assert.Equal(responseFromRulesEngine, result);
         }
 
         [Theory]
@@ -160,22 +164,11 @@ namespace WooordleTests
         [InlineData("zZzZz")]
         public void GuessWord_ThrowsException_IfWordFailsWordRuleValidation(string invalidWord)
         {
-            var errorMessage = $"{invalidWord} is not valid";
+            string errorMessage = $"{invalidWord} is not valid";
             _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out errorMessage)).Returns(false);
 
-            var ex = Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
+            WordNotValidException ex = Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
             Assert.Equal($"{invalidWord} is not valid", ex.Message);
-        }
-
-        [Fact]
-        public void GuessWord_ReturnsHypens_ForNoMatchingLetters()
-        {
-            //words.CurrentWord = "tests"
-            var message = "";
-            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out message)).Returns(true);
-            string result = words.GuessWord("valid");
-
-            Assert.Equal("-----", result);
         }
     }
 }
