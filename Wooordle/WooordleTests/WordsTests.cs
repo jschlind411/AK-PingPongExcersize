@@ -166,5 +166,16 @@ namespace WooordleTests
             var ex = Assert.Throws<WordNotValidException>(() => words.GuessWord("tests"));
             Assert.Equal($"{invalidWord} is not valid", ex.Message);
         }
+
+        [Fact]
+        public void GuessWord_ReturnsHypens_ForNoMatchingLetters()
+        {
+            //words.CurrentWord = "tests"
+            var message = "";
+            _engine.Setup(x => x.WordIsValid(It.IsAny<string>(), out message)).Returns(true);
+            string result = words.GuessWord("valid");
+
+            Assert.Equal("-----", result);
+        }
     }
 }
