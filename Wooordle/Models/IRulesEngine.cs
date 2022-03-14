@@ -2,7 +2,7 @@
 {
     public interface IRulesEngine
     {
-        bool WordIsValid(string word, out string message);
+        bool ValidateWord(string word);
         string CompareWords(string actualWord, string guessWord);
     }
 }

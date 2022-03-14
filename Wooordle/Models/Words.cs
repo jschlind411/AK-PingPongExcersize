@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 
 namespace Models
 {
@@ -45,10 +43,7 @@ namespace Models
 
         public string GuessWord(string guess)
         {
-            if (!_engine.WordIsValid(guess, out string message))
-            {
-                ThrowWordException(message);
-            }
+            _engine.ValidateWord(guess);
 
             string output = _engine.CompareWords(CurrentWord, guess);
 
@@ -58,82 +53,6 @@ namespace Models
             }
 
             return output;
-        }
-
-        private void ThrowWordException(string message)
-        {
-            if (message.Contains("long"))
-            {
-                throw new WordTooLongException(message);
-            }
-            else if (message.Contains("short"))
-            {
-                throw new WordTooShortException(message);
-            }
-            else
-            {
-                throw new WordNotValidException(message);
-            }
-        }
-
-        [Serializable]
-        public class WordTooLongException : Exception
-        {
-            public WordTooLongException()
-            {
-            }
-
-            public WordTooLongException(string message) : base(message)
-            {
-            }
-
-            public WordTooLongException(string message, Exception innerException) : base(message, innerException)
-            {
-            }
-
-            protected WordTooLongException(SerializationInfo info, StreamingContext context) : base(info, context)
-            {
-            }
-        }
-
-        [Serializable]
-        public class WordTooShortException : Exception
-        {
-            public WordTooShortException()
-            {
-            }
-
-            public WordTooShortException(string message) : base(message)
-            {
-            }
-
-            public WordTooShortException(string message, Exception innerException) : base(message, innerException)
-            {
-            }
-
-            protected WordTooShortException(SerializationInfo info, StreamingContext context) : base(info, context)
-            {
-            }
-        }
-
-        [Serializable]
-        public class WordNotValidException : Exception
-        {
-            public WordNotValidException()
-            {
-            }
-
-            public WordNotValidException(string message) : base(message)
-            {
-            }
-
-            public WordNotValidException(string message, Exception innerException) : base(message, innerException)
-            {
-            }
-
-            protected WordNotValidException(SerializationInfo info, StreamingContext context) : base(info, context)
-            {
-            }
         }
     }
 }
