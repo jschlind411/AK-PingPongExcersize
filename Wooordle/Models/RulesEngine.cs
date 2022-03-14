@@ -12,7 +12,19 @@ namespace Models
 
         public string CompareWords(string actualWord, string guessWord)
         {
-            return string.Empty;
+            char[] actualArray = actualWord.ToCharArray();
+            char[] guessArray = guessWord.ToCharArray();
+            string formattedString = "";
+
+            for (int i = 0; i < guessWord.Length; i++)
+            {
+                if (guessArray[i] != actualArray[i])
+                {
+                    formattedString += "-";
+                }
+            }
+
+            return formattedString;
         }
 
         public bool ValidateWord(string guess)

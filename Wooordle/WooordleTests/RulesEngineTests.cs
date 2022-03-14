@@ -61,7 +61,7 @@ namespace WooordleTests
         [Fact]
         public void CompareWords_ReplacesCharacter_WithHyphen_ThatDoNotMatch_ActualWord()
         {
-            string result = _engine.CompareWords("word", "deal");
+            string result = _engine.CompareWords("words", "dealt");
 
             Assert.Equal("-----", result);
         }
