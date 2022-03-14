@@ -53,9 +53,17 @@ namespace WooordleTests
         [Fact]
         public void CompareWords_ReturnsString_WhenPassedActualWordAndGuessWord()
         {
-            var result = _engine.CompareWords("", "");
+            string result = _engine.CompareWords("", "");
 
             Assert.IsType<string>(result);
+        }
+
+        [Fact]
+        public void CompareWords_ReplacesCharacter_WithHyphen_ThatDoNotMatch_ActualWord()
+        {
+            string result = _engine.CompareWords("word", "deal");
+
+            Assert.Equal("-----", result);
         }
     }
 }
