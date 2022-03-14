@@ -12,7 +12,7 @@ namespace Models
 
         public string CompareWords(string actualWord, string guessWord)
         {
-            throw new System.NotImplementedException();
+            return string.Empty;
         }
 
         public bool ValidateWord(string guess)
