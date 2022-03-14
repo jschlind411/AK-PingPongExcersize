@@ -23,7 +23,7 @@ namespace WooordleTests
         [InlineData("Not5Letters")]
         [InlineData("TooManyLettersThanAccepted")]
         [InlineData("barber")]
-        public void CompareWords_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
+        public void ValidateWords_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
         {
             Assert.Throws<WordTooLongException>(() => _engine.ValidateWord(wordLongerThan5));
         }
@@ -33,7 +33,7 @@ namespace WooordleTests
         [InlineData("four")]
         [InlineData("hi")]
         [InlineData("I")]
-        public void GuessWord_ThrowsWordTooShotException_GivenAStringShorterThan5Letters(string wordShorterThan5)
+        public void ValidateWord_ThrowsWordTooShotException_GivenAStringShorterThan5Letters(string wordShorterThan5)
         {
             Assert.Throws<WordTooShortException>(() => _engine.ValidateWord(wordShorterThan5));
         }
@@ -44,11 +44,19 @@ namespace WooordleTests
         [InlineData("$")]
         [InlineData("a")]
         [InlineData("8")]
-        public void GuessWord_ThrowsWordNotValidException_IfWordContainsInvalidCharacter(string invalidCharacter)
+        public void ValidateWord_ThrowsWordNotValidException_IfWordContainsInvalidCharacter(string invalidCharacter)
         {
             string invalidWord = "four" + invalidCharacter;
             Assert.Throws<WordNotValidException>(() => _engine.ValidateWord(invalidWord));
         }
 
+        [Fact]
+        public void CompareWords_ReturnsString_WhenPassedActualWordAndGuessWord()
+        {
+            string guess = "strong";
+            var result = _engine.CompareWords("string", guess);
+
+            Assert.IsType<string>(result);
+        }
     }
 }
