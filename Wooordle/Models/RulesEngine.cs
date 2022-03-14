@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 
 namespace Models
 {
@@ -31,7 +32,7 @@ namespace Models
             {
                 throw new WordTooShortException();
             }
-            else if (guess.Contains('&'))
+            else if (!Regex.IsMatch(guess, "[A-Z]"))
             {
                 throw new WordNotValidException();
             }

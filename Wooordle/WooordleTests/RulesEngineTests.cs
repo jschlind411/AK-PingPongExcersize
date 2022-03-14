@@ -40,6 +40,10 @@ namespace WooordleTests
 
         [Theory]
         [InlineData("&")]
+        [InlineData("^")]
+        [InlineData("$")]
+        [InlineData("a")]
+        [InlineData("8")]
         public void GuessWord_ThrowsWordNotValidException_IfWordContainsInvalidCharacter(string invalidCharacter)
         {
             string invalidWord = "four" + invalidCharacter;
