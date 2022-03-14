@@ -101,7 +101,7 @@ namespace WooordleTests
             }
         }
 
-        public class SetupMethods: Words
+        public class SetupTests: Words
         {
             [Fact]
             public void SetupWordList_PopulatesWordList_With5LetterWords()
@@ -118,7 +118,7 @@ namespace WooordleTests
             }
         }
 
-        public class ProtectedValues: Words
+        public class WordChangeTests: Words
         {
             [Fact]
             public void ChangeCurrentWord_SetsWordFromWordList_AsCurrentWord()
