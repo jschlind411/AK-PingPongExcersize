@@ -53,8 +53,7 @@ namespace WooordleTests
         [Fact]
         public void CompareWords_ReturnsString_WhenPassedActualWordAndGuessWord()
         {
-            string guess = "strong";
-            var result = _engine.CompareWords("string", guess);
+            var result = _engine.CompareWords("", "");
 
             Assert.IsType<string>(result);
         }
