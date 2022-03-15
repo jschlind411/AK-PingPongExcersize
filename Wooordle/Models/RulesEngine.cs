@@ -20,7 +20,11 @@ namespace Models
             for (int i = 0; i < guessWord.Length; i++)
             {
 
-                if (LetterFromGuessIsAtCurrentIndex(guessArray[i], actualArray))
+                if (guessArray[i] == actualArray[i])
+                {
+                    formattedString += guessArray[i];
+                }
+                else if (LetterFromGuessIsAtCurrentIndex(guessArray[i], actualArray))
                 {
                     formattedString += "?";
                 }

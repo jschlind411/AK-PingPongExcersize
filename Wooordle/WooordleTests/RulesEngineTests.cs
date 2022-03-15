@@ -60,20 +60,14 @@ namespace WooordleTests
 
         [Theory]
         [InlineData("rocks", "dealt", "-----")]
+        [InlineData("ghost", "align", "?----")]
         [InlineData("dears", "ducky", "d----")]
-        public void CompareWords_ReplacesCharacter_WithHyphen_ThatDoNotMatch_ActualWord(string guess, string actual, string expectedResult)
+        [InlineData("plane", "cause", "--?-e")]
+        public void CompareWords_ReturnsGuessWord_AsFormatedString(string guess, string actual, string expectedResult)
         {
             string result = _engine.CompareWords(actual, guess);
 
             Assert.Equal(expectedResult, result);
-        }
-
-        [Fact]
-        public void CompareWords_ReplacesCharacter_WithQuestionMark_ThatIsInWord_ButWrongPlace()
-        {
-            string result = _engine.CompareWords("align","ghost");
-
-            Assert.Equal("?----", result);
         }
     }
 }
