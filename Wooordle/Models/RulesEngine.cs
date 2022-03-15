@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Models
 {
-    public class RulesEngine: IRulesEngine
+    public class RulesEngine : IRulesEngine
     {
         public RulesEngine()
         {
@@ -14,17 +14,36 @@ namespace Models
         {
             char[] actualArray = actualWord.ToCharArray();
             char[] guessArray = guessWord.ToCharArray();
+
             string formattedString = "";
 
             for (int i = 0; i < guessWord.Length; i++)
             {
-                if (guessArray[i] != actualArray[i])
+
+                if (LetterFromGuessIsAtCurrentIndex(guessArray[i], actualArray))
+                {
+                    formattedString += "?";
+                }
+                else if (guessArray[i] != actualArray[i])
                 {
                     formattedString += "-";
                 }
+
             }
 
             return formattedString;
+        }
+
+        private bool LetterFromGuessIsAtCurrentIndex(char guessLetter, char[] actualWord)
+        {
+            for (int i = 0; i < actualWord.Length; i++)
+            {
+                if (guessLetter == actualWord[i])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool ValidateWord(string guess)
