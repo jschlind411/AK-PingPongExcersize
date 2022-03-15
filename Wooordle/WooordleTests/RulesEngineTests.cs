@@ -69,7 +69,7 @@ namespace WooordleTests
         [Fact]
         public void CompareWords_ReplacesCharacter_WithQuestionMark_ThatIsInWord_ButWrongPlace()
         {
-            string result = _engine.CompareWords("guess","ghoul");
+            string result = _engine.CompareWords("align","ghost");
 
             Assert.Equal("?----", result);
         }
