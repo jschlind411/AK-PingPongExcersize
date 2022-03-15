@@ -58,12 +58,14 @@ namespace WooordleTests
             Assert.IsType<string>(result);
         }
 
-        [Fact]
-        public void CompareWords_ReplacesCharacter_WithHyphen_ThatDoNotMatch_ActualWord()
+        [Theory]
+        [InlineData("rocks", "dealt", "-----")]
+        [InlineData("dears", "ducky", "d----")]
+        public void CompareWords_ReplacesCharacter_WithHyphen_ThatDoNotMatch_ActualWord(string guess, string actual, string expectedResult)
         {
-            string result = _engine.CompareWords("words", "dealt");
+            string result = _engine.CompareWords(actual, guess);
 
-            Assert.Equal("-----", result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
