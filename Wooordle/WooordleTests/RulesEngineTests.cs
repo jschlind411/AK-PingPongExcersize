@@ -65,5 +65,13 @@ namespace WooordleTests
 
             Assert.Equal("-----", result);
         }
+
+        [Fact]
+        public void CompareWords_ReplacesCharacter_WithQuestionMark_ThatIsInWord_ButWrongPlace()
+        {
+            string result = _engine.CompareWords("guess","ghoul");
+
+            Assert.Equal("?----", result);
+        }
     }
 }
