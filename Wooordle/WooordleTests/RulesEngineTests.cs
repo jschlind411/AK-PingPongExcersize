@@ -59,11 +59,43 @@ namespace WooordleTests
         }
 
         [Theory]
-        [InlineData("rocks", "dealt", "-----")]
-        [InlineData("ghost", "align", "?----")]
-        [InlineData("dears", "ducky", "d----")]
+        [InlineData("rocks","dealt")]
+        [InlineData("water","books")]
+        public void CompareWords_GivenWord_WithNoMatchingCharacters_WillReturnFormattedString_WithAllHyphens(string guess, string actual)
+        {
+            string result = _engine.CompareWords(actual,guess);
+
+            Assert.Equal("-----", result);
+        }
+
+        [Theory]
+        [InlineData("acccc", "babbb", "?----")]
+        [InlineData("ccacc", "babbb", "--?--")]
+        [InlineData("cccaa", "aabbb", "---??")]
+        [InlineData("abcde", "cedba", "?????")]
+        public void CompareWords_GivenWord_WithMatchingCharactersInWrongPlacement_WillReturnFormattedString_WithQuestionMarks(string guess, string actual, string expected)
+        {
+            string result = _engine.CompareWords(actual, guess);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("dears", "dzzzz", "d----")]
+        [InlineData("zzzzt", "ddddt", "----t")]
+        [InlineData("zozzt", "doddt", "-o--t")]
+        [InlineData("zzzzz", "zzzzz", "zzzzz")]
+        public void CompareWords_GivenWord_WithMatchingCharactersWithCorrectPlacement_WillReturnFormattedString_WithGuessedLetter(string guess, string actual, string expected)
+        {
+            string result = _engine.CompareWords(actual,guess);
+
+            Assert.Equal(expected,result);
+        }
+
+        [Theory]
         [InlineData("plane", "cause", "--?-e")]
-        public void CompareWords_ReturnsGuessWord_AsFormatedString(string guess, string actual, string expectedResult)
+        [InlineData("crane", "carse", "c??-e")]
+        public void CompareWords_GivenWord_WithAllUseCases_WillReturnFormattedStringWith_Letters_QuestionMarks_Dashes(string guess, string actual, string expectedResult)
         {
             string result = _engine.CompareWords(actual, guess);
 
