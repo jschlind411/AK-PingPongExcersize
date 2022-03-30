@@ -12,6 +12,6 @@ namespace Models
         }
 
         public string Name { get; private set; }
-        public int Score { get; } = 0;
+        public int Score { get; set; } = 0;
     }
 }

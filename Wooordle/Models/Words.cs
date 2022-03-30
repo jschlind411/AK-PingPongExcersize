@@ -10,7 +10,7 @@ namespace Models
 
         protected List<string> UsedWords { get; set; }
 
-        protected string CurrentWord { get; set; }
+        public string CurrentWord { get; protected set; }
 
         public Words() : this(new RulesEngine())
         {
@@ -46,11 +46,6 @@ namespace Models
             _engine.ValidateWord(guess);
 
             string output = _engine.CompareWords(CurrentWord, guess);
-
-            if(output == guess)
-            {
-                return $"{output} Nicely Done!";
-            }
 
             return output;
         }
