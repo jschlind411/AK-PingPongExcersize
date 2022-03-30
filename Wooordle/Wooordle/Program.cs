@@ -2,11 +2,53 @@
 
 namespace Wooordle
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PlayWordle();
+        }
+
+        public static void PlayWordle()
+        {
+            CreatePlayers();
+
+            bool KeepPlaying = false;
+
+            do
+            {
+                var wordGuessedCorrectly = false;
+
+                do
+                {
+                    wordGuessedCorrectly = WordleGuessPhase();
+
+                } while (!wordGuessedCorrectly);
+
+
+            } while (!KeepPlaying);
+        }
+
+        private static bool WordleGuessPhase()
+        {
+            DisplayWord();
+
+            return PlayerGuess();
+        }
+
+        public static void CreatePlayers()
+        {
+
+        }
+
+        public static void DisplayWord()
+        {
+
+        }
+
+        public static bool PlayerGuess()
+        {
+            return false;
         }
     }
 }
