@@ -67,7 +67,7 @@ namespace Models
             {
                 throw new WordTooShortException();
             }
-            else if (!Regex.IsMatch(guess, "[A-Z]"))
+            else if (!Regex.IsMatch(guess, "[a-z]"))
             {
                 throw new WordNotValidException();
             }

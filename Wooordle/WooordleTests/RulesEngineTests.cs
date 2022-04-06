@@ -42,7 +42,7 @@ namespace WooordleTests
         [InlineData("&")]
         [InlineData("^")]
         [InlineData("$")]
-        [InlineData("a")]
+        [InlineData("A")]
         [InlineData("8")]
         public void ValidateWord_ThrowsWordNotValidException_IfWordContainsInvalidCharacter(string invalidCharacter)
         {
