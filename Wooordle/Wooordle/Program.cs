@@ -59,7 +59,7 @@ namespace Wooordle
             Console.WriteLine($"Guesses remaining: {tries}");
             if(tries == 6)
             {
-                Console.WriteLine("-----");
+                Console.WriteLine("FIVE_LETTERS");
             }
             else
             {
@@ -70,9 +70,10 @@ namespace Wooordle
         public static bool PlayerGuess()
         {
             Console.WriteLine("Enter guess: ");
-            string userGuessInput = Console.ReadLine();
+            string userGuessInput = Console.ReadLine().ToUpper();
 
             string result = words.GuessWord(userGuessInput);
+
             if (result == words.CurrentWord)
             {
                 currentWordProgress = words.CurrentWord;
@@ -81,12 +82,19 @@ namespace Wooordle
             }
 
             currentWordProgress = result;
+            tries--;
             return false;
         }
 
         public static bool AskUserToContinue()
         {
             Console.WriteLine();
+            string userAnswer = Console.ReadLine()[0].ToString().ToUpper();
+
+            if (userAnswer == "Y")
+            {
+                tries = 6;
+            }
             return false;
         }
     }
