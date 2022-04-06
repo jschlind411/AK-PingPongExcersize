@@ -49,12 +49,12 @@ namespace Wooordle
 
         private static bool WordleGuessPhase()
         {
-            DisplayWord();
+            DisplayProgress();
 
             return PlayerGuess();
         }
 
-        public static void DisplayWord()
+        public static void DisplayProgress()
         {
             Console.WriteLine($"Guesses remaining: {tries}");
 
@@ -63,7 +63,7 @@ namespace Wooordle
                 currentWordProgress = "-----";
             }
 
-            Console.WriteLine(currentWordProgress);
+            Console.WriteLine(currentWordProgress.ToUpper());
         }
 
         public static bool PlayerGuess()
@@ -80,19 +80,31 @@ namespace Wooordle
                 return true;
             }
 
+            Console.WriteLine();
             currentWordProgress = result;
             tries--;
+
             return false;
         }
 
         public static bool AskUserToContinue()
         {
-            Console.WriteLine();
-            string userAnswer = Console.ReadLine()[0].ToString().ToUpper();
+            Console.WriteLine("Continue Playing? y/n");
+            string userAnswer = Console.ReadLine()[0].ToString().ToLower();
 
-            if (userAnswer == "Y")
+            if (userAnswer == "y")
             {
                 tries = 6;
+                return true;
+            }
+
+            else if(userAnswer == "n")
+            {
+                Console.WriteLine("Ending game");
+            }
+            else
+            {
+                Console.Write("Not a valid answer - Ending game");
             }
             return false;
         }
