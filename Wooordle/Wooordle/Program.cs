@@ -38,13 +38,6 @@ namespace Wooordle
             } while (KeepPlaying);
         }
 
-        private static bool WordleGuessPhase()
-        {
-            DisplayWord();
-
-            return PlayerGuess();
-        }
-
         public static void CreatePlayers()
         {
             Console.WriteLine("Enter player name: ");
@@ -52,6 +45,13 @@ namespace Wooordle
 
             currentPlayer = new Player(playerName);
             Console.WriteLine($"Created new player {currentPlayer.Name}");
+        }
+
+        private static bool WordleGuessPhase()
+        {
+            DisplayWord();
+
+            return PlayerGuess();
         }
 
         public static void DisplayWord()
@@ -70,9 +70,9 @@ namespace Wooordle
         public static bool PlayerGuess()
         {
             Console.WriteLine("Enter guess: ");
-            string guessWord = Console.ReadLine();
+            string userGuessInput = Console.ReadLine();
 
-            string result = words.GuessWord(guessWord);
+            string result = words.GuessWord(userGuessInput);
             if (result == words.CurrentWord)
             {
                 currentWordProgress = words.CurrentWord;
