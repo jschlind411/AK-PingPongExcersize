@@ -79,10 +79,13 @@ namespace Wooordle
                 Console.WriteLine("Nicely Done!");
                 return true;
             }
+            else if (result.Length > 0)
+            {
+                currentWordProgress = result;
+                tries--;
+            }
 
             Console.WriteLine();
-            currentWordProgress = result;
-            tries--;
 
             return false;
         }

@@ -146,19 +146,6 @@ namespace WooordleTests
         }
 
         [Fact]
-        public void GuessWord_ReturnsWinMessage_IfEngineCompareWord_ReturnsGuessedWord()
-        {
-            _engine.Setup(x => x.ValidateWord(It.IsAny<string>())).Returns(true);
-
-            string guessWord = "guess";
-            _engine.Setup(x => x.CompareWords(It.IsAny<string>(), It.IsAny<string>())).Returns(guessWord);
-            
-            string result = words.GuessWord(guessWord);
-
-            Assert.Equal($"{guessWord} Nicely Done!", result);
-        }
-
-        [Fact]
         public void GuessWord_ReturnsEmptyLine_IfEngineValidateWord_ReturnsFalse()
         {
             _engine.Setup(x => x.ValidateWord(It.IsAny<string>())).Returns(false);

@@ -43,9 +43,12 @@ namespace Models
 
         public string GuessWord(string guess)
         {
-            _engine.ValidateWord(guess);
+            string output = "";
 
-            string output = _engine.CompareWords(CurrentWord, guess);
+            if (_engine.ValidateWord(guess))
+            {
+                 output = _engine.CompareWords(CurrentWord, guess);
+            }
 
             return output;
         }
