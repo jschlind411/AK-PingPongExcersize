@@ -157,5 +157,15 @@ namespace WooordleTests
 
             Assert.Equal($"{guessWord} Nicely Done!", result);
         }
+
+        [Fact]
+        public void GuessWord_ReturnsEmptyLine_IfEngineValidateWord_ReturnsFalse()
+        {
+            _engine.Setup(x => x.ValidateWord(It.IsAny<string>())).Returns(false);
+
+            string result = words.GuessWord("");
+
+            Assert.Equal("", result);
+        }
     }
 }

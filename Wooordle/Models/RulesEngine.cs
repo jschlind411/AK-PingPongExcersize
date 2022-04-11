@@ -52,7 +52,22 @@ namespace Models
 
         public bool ValidateWord(string guess)
         {
-            ThrowWordException(guess);
+            try
+            {
+                ThrowWordException(guess);
+            }
+            catch (WordTooLongException e)
+            {
+                Console.WriteLine("The word entered is too long");
+            }
+            catch(WordTooShortException e)
+            {
+                Console.WriteLine("The word entered is too short");
+            }
+            catch(WordNotValidException e)
+            {
+                Console.WriteLine("The word entered is not valid");
+            }
 
             return true;
         }
@@ -73,6 +88,7 @@ namespace Models
             }
         }
 
+        //Handle Exceptions
         [Serializable]
         public class WordTooLongException : Exception
         {
