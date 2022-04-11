@@ -25,7 +25,10 @@ namespace WooordleTests
         [InlineData("barber")]
         public void ValidateWords_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
         {
-            Assert.Throws<WordTooLongException>(() => _engine.ValidateWord(wordLongerThan5));
+            bool result = _engine.ValidateWord(wordLongerThan5);
+
+            Assert.
+            Assert.False(_engine.ValidateWord(wordLongerThan5));
         }
 
         [Theory]
