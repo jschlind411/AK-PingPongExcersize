@@ -19,38 +19,49 @@ namespace WooordleTests
             Assert.NotNull(_engine);
         }
 
+        public class ThrowExceptionTests: RulesEngine
+        {
+            [Theory]
+            [InlineData("Not5Letters")]
+            [InlineData("TooManyLettersThanAccepted")]
+            [InlineData("barber")]
+            public void ThrowWordException_ThrowsWordTooLongException_GiveAStringGreaterThan5Length(string wordLongerThan5)
+            {
+                WordTooLongException ex = Assert.Throws<WordTooLongException>(() => ThrowWordException(wordLongerThan5));
+                Assert.Equal("The word entered is too long", ex.Message);
+            }
+
+            [Theory]
+            [InlineData("one")]
+            [InlineData("four")]
+            [InlineData("hi")]
+            [InlineData("I")]
+            public void ThrowWordException_ThrowsWordTooShortException_GivenAStringShorterThan5Length(string wordShorterThan5)
+            {
+                WordTooShortException ex = Assert.Throws<WordTooShortException>(() => ThrowWordException(wordShorterThan5));
+                Assert.Equal("The word entered is too short", ex.Message);
+            }
+
+            [Theory]
+            [InlineData("aaaa&")]
+            [InlineData("aa^aa")]
+            [InlineData("$aaaa")]
+            [InlineData("aAaaa")]
+            [InlineData("aaa8a")]
+            public void ThrowWordException_ThrowsWordNotValidException_IfWordContainsInvalidCharacter(string invalidCharacter)
+            {
+                WordNotValidException ex = Assert.Throws<WordNotValidException>(() => ThrowWordException(invalidCharacter));
+                Assert.Equal("The word entered is not valid", ex.Message);
+            }
+        }
+            
         [Theory]
         [InlineData("Not5Letters")]
         [InlineData("TooManyLettersThanAccepted")]
-        [InlineData("barber")]
-        public void ValidateWords_ThrowsWordTooLongException_GivenAStringGreaterThan5Letters(string wordLongerThan5)
+        [InlineData("barber#")]
+        public void ValidateWords_ReturnsFalse_WhenGuessWordIsTooLong(string wordLongerThan5)
         {
-            bool result = _engine.ValidateWord(wordLongerThan5);
-
-            Assert.
             Assert.False(_engine.ValidateWord(wordLongerThan5));
-        }
-
-        [Theory]
-        [InlineData("one")]
-        [InlineData("four")]
-        [InlineData("hi")]
-        [InlineData("I")]
-        public void ValidateWord_ThrowsWordTooShotException_GivenAStringShorterThan5Letters(string wordShorterThan5)
-        {
-            Assert.Throws<WordTooShortException>(() => _engine.ValidateWord(wordShorterThan5));
-        }
-
-        [Theory]
-        [InlineData("&")]
-        [InlineData("^")]
-        [InlineData("$")]
-        [InlineData("A")]
-        [InlineData("8")]
-        public void ValidateWord_ThrowsWordNotValidException_IfWordContainsInvalidCharacter(string invalidCharacter)
-        {
-            string invalidWord = "four" + invalidCharacter;
-            Assert.Throws<WordNotValidException>(() => _engine.ValidateWord(invalidWord));
         }
 
         [Fact]

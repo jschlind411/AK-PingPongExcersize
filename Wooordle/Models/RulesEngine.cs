@@ -55,6 +55,8 @@ namespace Models
             try
             {
                 ThrowWordException(guess);
+
+                return true;
             }
             catch (WordTooLongException e)
             {
@@ -69,10 +71,10 @@ namespace Models
                 Console.WriteLine();
             }
 
-            return true;
+            return false;
         }
 
-        private void ThrowWordException(string guess)
+        protected void ThrowWordException(string guess)
         {
             if (guess.Length > 5)
             {
@@ -82,7 +84,7 @@ namespace Models
             {
                 throw new WordTooShortException("The word entered is too short");
             }
-            else if (!Regex.IsMatch(guess, "[a-z]"))
+            else if (Regex.IsMatch(guess, "^[a-z]"))
             {
                 throw new WordNotValidException("The word entered is not valid");
             }
