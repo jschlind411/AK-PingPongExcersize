@@ -98,6 +98,8 @@ namespace Wooordle
             if (userAnswer == "y")
             {
                 tries = 6;
+                words.ChangeCurrentWord(words.CurrentWord);
+
                 return true;
             }
 

@@ -36,7 +36,7 @@ namespace Models
             };
         }
 
-        protected void ChangeCurrentWord(string currentWord)
+        public void ChangeCurrentWord(string currentWord)
         {
             CurrentWord = "guess";
         }
