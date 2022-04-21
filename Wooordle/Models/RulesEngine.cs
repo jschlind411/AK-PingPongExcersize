@@ -58,17 +58,17 @@ namespace Models
 
                 return true;
             }
-            catch (WordTooLongException e)
+            catch (WordTooLongException e )
             {
-                Console.WriteLine();
+                Console.WriteLine(e.Message);
             }
             catch(WordTooShortException e)
             {
-                Console.WriteLine();
+                Console.WriteLine(e.Message);
             }
             catch(WordNotValidException e)
             {
-                Console.WriteLine();
+                Console.WriteLine(e.Message);
             }
 
             return false;
@@ -84,7 +84,7 @@ namespace Models
             {
                 throw new WordTooShortException("The word entered is too short");
             }
-            else if (Regex.IsMatch(guess, "^[a-z]"))
+            else if (Regex.IsMatch(guess, "[^a-z]"))
             {
                 throw new WordNotValidException("The word entered is not valid");
             }
